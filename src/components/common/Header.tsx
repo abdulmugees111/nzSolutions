@@ -25,7 +25,7 @@ export function Header() {
         <nav className="hidden items-center gap-7 lg:flex">
           {navigation.map((item) => (
             <Link key={item.href} href={item.href} className="text-sm font-medium text-muted-foreground hover:text-foreground">
-              {item.labelKey ? t(item.labelKey) : item.label}
+              {t(item.labelKey)}
             </Link>
           ))}
         </nav>
@@ -57,7 +57,7 @@ export function Header() {
                 className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
                 onClick={() => setOpen(false)}
               >
-                {item.labelKey ? t(item.labelKey) : item.label}
+                {t(item.labelKey)}
               </Link>
             ))}
             <div className="flex items-center gap-2 pt-2">
