@@ -1,0 +1,29 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "services": "Services",
+    "industries": "Industries",
+    "caseStudies": "Case Studies",
+    "about": "About",
+    "careers": "Careers",
+    "contact": "Contact"
+  },
+  "HomePage": {
+    "heroEyebrow": "Telecom + Digital Engineering",
+    "heroTitle": "Build reliable networks, web platforms, mobile apps, and custom software.",
+    "heroDescription": "NZ Solutions helps businesses deliver telecom infrastructure and modern digital products with secure, scalable, and responsive engineering.",
+    "primaryCta": "Explore Services",
+    "secondaryCta": "Request Consultation"
+  },
+  "ServicesPage": {
+    "eyebrow": "Services",
+    "title": "One partner for infrastructure and digital delivery.",
+    "description": "From fibre networks and data centres to websites, mobile apps, dashboards, APIs, and custom business systems."
+  },
+  "Seo": {
+    "services": {
+      "title": "Services",
+      "description": "Explore NZ Solutions services including telecom infrastructure, web development, mobile development, custom software, and integrations."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "Navigation": {
+    "home": "Hem",
+    "services": "Tjänster",
+    "industries": "Branscher",
+    "caseStudies": "Kundcase",
+    "about": "Om oss",
+    "careers": "Karriär",
+    "contact": "Kontakt"
+  },
+  "HomePage": {
+    "heroEyebrow": "Telekom + Digital utveckling",
+    "heroTitle": "Bygg pålitliga nätverk, webbplattformar, mobilappar och skräddarsydd mjukvara.",
+    "heroDescription": "NZ Solutions hjälper företag att leverera telekominfrastruktur och moderna digitala produkter med säker, skalbar och responsiv teknik.",
+    "primaryCta": "Utforska tjänster",
+    "secondaryCta": "Boka konsultation"
+  },
+  "ServicesPage": {
+    "eyebrow": "Tjänster",
+    "title": "En partner för infrastruktur och digital leverans.",
+    "description": "Från fibernät och datacenter till webbplatser, mobilappar, dashboards, API:er och anpassade affärssystem."
+  },
+  "Seo": {
+    "services": {
+      "title": "Tjänster",
+      "description": "Utforska NZ Solutions tjänster inom telekominfrastruktur, webbutveckling, mobilutveckling, mjukvara och integrationer."
+    }
+  }
+}
