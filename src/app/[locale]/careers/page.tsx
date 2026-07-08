@@ -109,16 +109,6 @@ export default function CareersPage() {
             ))}
           </div>
 
-          {/* Stats strip */}
-          <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {[['12+', 'Years in Business'], ['24/7', 'UK Operations'], ['20+', 'Service Lines'], ['100%', 'Committed']].map(([val, lbl]) => (
-              <div key={lbl} className="rounded-2xl border bg-card p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl">
-                <p className="text-3xl font-black text-primary">{val}</p>
-                <p className="mt-1.5 text-xs font-medium text-muted-foreground">{lbl}</p>
-              </div>
-            ))}
-          </div>
-
           {/* Apply CTA */}
           <div className="mt-6 rounded-[2rem] border bg-card p-4 shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(0,0,0,0.18)]">
             <div className="rounded-[1.5rem] bg-primary overflow-hidden">
@@ -147,27 +137,34 @@ export default function CareersPage() {
                   </a>
                 </div>
 
-                {/* Right: 3 portrait photos side by side */}
-                <div className="hidden lg:flex flex-1 items-end gap-3 px-6 pb-0 pt-6 self-end">
-                  {[
-                    {src: 'photo-1522071820081-009f0129c71c', h: '180px'},
-                    {src: 'photo-1531482615713-2afd69097998', h: '210px'},
-                    {src: 'photo-1559136555-9303baea8ebd', h: '165px'},
-                  ].map(({src, h}) => (
-                    <div
-                      key={src}
-                      className="relative flex-1 overflow-hidden rounded-t-2xl"
-                      style={{height: h, border: '2px solid rgba(255,255,255,0.12)'}}
-                    >
-                      <Image
-                        src={`https://images.unsplash.com/${src}?auto=format&fit=crop&w=300&q=80`}
-                        alt="Team member"
-                        fill
-                        className="object-cover object-top"
-                        sizes="150px"
-                      />
-                    </div>
-                  ))}
+                {/* Right: overlapping circles */}
+                <div className="hidden lg:flex flex-1 items-center justify-center py-10">
+                  <div className="flex items-center">
+                    {[
+                      {src: 'photo-1522071820081-009f0129c71c', size: 160, z: 1},
+                      {src: 'photo-1531482615713-2afd69097998', size: 190, z: 3},
+                      {src: 'photo-1559136555-9303baea8ebd', size: 160, z: 2},
+                    ].map(({src, size, z}, i) => (
+                      <div
+                        key={src}
+                        className="relative shrink-0 overflow-hidden rounded-full shadow-2xl transition-transform duration-300 hover:scale-105 hover:z-10"
+                        style={{
+                          width: size, height: size,
+                          marginLeft: i === 0 ? 0 : '-32px',
+                          border: '3px solid rgba(255,255,255,0.25)',
+                          zIndex: z,
+                        }}
+                      >
+                        <Image
+                          src={`https://images.unsplash.com/${src}?auto=format&fit=crop&w=400&q=80`}
+                          alt="Team"
+                          fill
+                          className="object-cover"
+                          sizes="200px"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
               </div>
