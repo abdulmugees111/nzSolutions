@@ -3,6 +3,7 @@ import {Container} from '@/components/common/Container';
 import {CTASection} from '@/components/home/CTASection';
 import {ServiceDetail} from '@/components/services/ServiceDetail';
 import {services} from '@/constants/services';
+import {NeuralHoverBackground} from '@/components/common/NeuralHoverBackground';
 
 export function generateStaticParams() {
   return services.map((service) => ({slug: service.slug}));
@@ -32,9 +33,14 @@ export default async function ServiceDetailPage({params}: {params: Promise<{slug
 
   return (
     <>
+       <main className="relative overflow-hidden bg-background">
+          <NeuralHoverBackground />
+    
       <Container className="section-padding">
         <ServiceDetail service={service} />
       </Container>
+          </main>
+
       <CTASection />
     </>
   );

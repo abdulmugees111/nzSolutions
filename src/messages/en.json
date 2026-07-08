@@ -2,11 +2,14 @@
   "Navigation": {
     "home": "Home",
     "services": "Services",
-    "industries": "Industries",
-    "caseStudies": "Case Studies",
     "about": "About",
     "careers": "Careers",
-    "contact": "Contact"
+    "contact": "Contact",
+
+    "_just_for_reference": {
+      "industries": "Industries",
+      "caseStudies": "Case Studies"
+    }
   },
   "HomePage": {
     "heroEyebrow": "Telecom + Digital Engineering",
