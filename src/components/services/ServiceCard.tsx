@@ -6,7 +6,8 @@ import type {Service} from '@/constants/services';
 
 export function ServiceCard({service}: {service: Service}) {
   return (
-    <Card className="group h-full transition hover:-translate-y-1 hover:shadow-md">
+    // <Card className="group h-full transition hover:-translate-y-1 hover:shadow-md">
+    <Card className="group h-full transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl">
       <CardHeader>
         <Badge>{service.category === 'digital' ? 'Digital Engineering' : 'Telecom Infrastructure'}</Badge>
         <CardTitle className="mt-4">{service.title}</CardTitle>

@@ -7,7 +7,7 @@ const reasons = [
   'Responsive design for every device',
   'SEO-friendly architecture',
   'Scalable and maintainable codebase',
-  'Post-launch support and maintenance'
+  'Post-launch support & maintenance'
 ];
 
 export function WhyChooseUs() {

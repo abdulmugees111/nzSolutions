@@ -31,7 +31,7 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
-          <LanguageSwitcher />
+          {/* <LanguageSwitcher /> */}
           <Button asChild>
             <Link href="/contact">{t('contact')}</Link>
           </Button>

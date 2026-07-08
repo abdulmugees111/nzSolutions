@@ -20,7 +20,7 @@ export function Footer() {
             {navigation.slice(0, 5).map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="hover:text-white">
-                  {item.label ?? item.labelKey}
+                  {item?.label ?? item.labelKey}
                 </Link>
               </li>
             ))}
