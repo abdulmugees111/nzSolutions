@@ -99,7 +99,7 @@ export default function AboutPage() {
 
           {/* Left */}
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wide text-secondary">
+            <p className="text-base font-bold uppercase tracking-widest text-secondary">
               About NZ Solutions
             </p>
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl xl:text-7xl">
@@ -379,7 +379,7 @@ export default function AboutPage() {
       {/* ── CAREERS CTA ─────────────────────────────────────── */}
       <section className="pt-8 pb-16 sm:pb-20 lg:pb-28">
         <Container>
-          <div className="rounded-[2rem] border bg-card p-4 shadow-2xl">
+          <div className="rounded-[2rem] border bg-card p-4 shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(0,0,0,0.18)] cursor-pointer">
             <div className="rounded-[1.5rem] bg-primary p-6 sm:p-8">
               <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
 

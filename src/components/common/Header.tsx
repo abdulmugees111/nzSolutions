@@ -1,18 +1,17 @@
 'use client';
 
+import {useState} from 'react';
 import {Menu, X} from 'lucide-react';
 import {useTranslations} from 'next-intl';
-import {useAtom} from 'jotai';
 import {navigation} from '@/constants/navigation';
 import {siteConfig} from '@/constants/site';
 import {Link} from '@/i18n/navigation';
-import {mobileMenuOpenAtom} from '@/store';
 import {Button} from '@/components/ui/button';
 import {LanguageSwitcher} from './LanguageSwitcher';
 
 export function Header() {
   const t = useTranslations('Navigation');
-  const [open, setOpen] = useAtom(mobileMenuOpenAtom);
+  const [open, setOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 border-b bg-background/90 backdrop-blur">
