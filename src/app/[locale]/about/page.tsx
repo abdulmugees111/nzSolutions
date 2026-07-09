@@ -1,5 +1,6 @@
 import React from 'react';
-import {CheckCircle2, Shield, Users, Zap, Layers} from 'lucide-react';
+import {CheckCircle2, Shield, Users, Zap, Layers, Banknote, GraduationCap, Globe} from 'lucide-react';
+import {ApplyButton} from '@/components/careers/ApplyButton';
 import Image from 'next/image';
 import {Container} from '@/components/common/Container';
 import {AccreditationsBanner} from '@/components/common/AccreditationsBanner';
@@ -369,6 +370,52 @@ export default function AboutPage() {
                     </p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* ── CAREERS CTA ─────────────────────────────────────── */}
+      <section className="pt-8 pb-16 sm:pb-20 lg:pb-28">
+        <Container>
+          <div className="rounded-[2rem] border bg-card p-4 shadow-2xl">
+            <div className="rounded-[1.5rem] bg-primary p-6 sm:p-8">
+              <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+
+                {/* Left: text + highlights */}
+                <div className="flex-1">
+                  <p className="text-xs font-bold uppercase tracking-widest text-secondary">We&apos;re Recruiting</p>
+                  <h2 className="mt-2 text-2xl font-black text-white leading-tight">Ready to join the team?</h2>
+                  <p className="mt-2 text-sm leading-6 text-primary-foreground/60">
+                    Send your CV to{' '}
+                    <span className="font-semibold text-white">Careers@nzsolutions.co.uk</span>{' '}
+                    and we&apos;ll be in touch.
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {[
+                      {icon: Banknote,      label: 'Competitive Pay'},
+                      {icon: GraduationCap, label: 'Career Training'},
+                      {icon: Users,         label: 'Inclusive Culture'},
+                      {icon: Globe,         label: 'UK Infrastructure'},
+                    ].map(({icon: Icon, label}) => (
+                      <div
+                        key={label}
+                        className="flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-xs font-medium text-primary-foreground/80"
+                        style={{background: 'rgba(255,255,255,0.08)'}}
+                      >
+                        <Icon size={13} className="text-secondary shrink-0" />
+                        {label}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right: CTA button */}
+                <div className="shrink-0">
+                  <ApplyButton />
+                </div>
+
               </div>
             </div>
           </div>

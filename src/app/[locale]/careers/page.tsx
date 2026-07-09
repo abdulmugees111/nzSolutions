@@ -4,6 +4,7 @@ import {Container} from '@/components/common/Container';
 import {AccreditationsBanner} from '@/components/common/AccreditationsBanner';
 import {Button} from '@/components/ui/button';
 import {Link} from '@/i18n/navigation';
+import {ApplyButton} from '@/components/careers/ApplyButton';
 
 export const metadata = {
   title: 'Careers',
@@ -45,9 +46,7 @@ export default function CareersPage() {
               If you&apos;re motivated, persistent, and passionate about technology — we want to hear from you.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg">
-                <a href="mailto:Careers@nzsolutions.co.uk">Apply Now <ArrowRight size={18} /></a>
-              </Button>
+              <ApplyButton />
               <Button asChild variant="outline" size="lg">
                 <Link href="/contact">Get in Touch</Link>
               </Button>
@@ -110,7 +109,7 @@ export default function CareersPage() {
           </div>
 
           {/* Apply CTA */}
-          <div className="mt-6 rounded-[2rem] border bg-card p-4 shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(0,0,0,0.18)]">
+          <div className="hidden mt-6 rounded-[2rem] border bg-card p-4 shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(0,0,0,0.18)]">
             <div className="rounded-[1.5rem] bg-primary overflow-hidden">
               <div className="flex flex-col lg:flex-row lg:items-center">
 
@@ -129,12 +128,9 @@ export default function CareersPage() {
                       </div>
                     ))}
                   </div>
-                  <a
-                    href="mailto:Careers@nzsolutions.co.uk"
-                    className="mt-5 inline-flex w-fit items-center gap-2 rounded-xl bg-secondary px-5 py-2.5 text-sm font-bold text-secondary-foreground transition-all hover:opacity-90"
-                  >
-                    Apply Now <ArrowRight size={15} />
-                  </a>
+                  <div className="mt-5">
+                    <ApplyButton />
+                  </div>
                 </div>
 
                 {/* Right: overlapping circles */}

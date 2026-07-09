@@ -15,6 +15,5 @@ export const navigation = [
   {labelKey: 'industries', href: '/industries'},
   {labelKey: 'caseStudies', href: '/case-studies'},
   {labelKey: 'about', href: '/about'},
-  {labelKey: 'careers', href: '/careers'},
   {labelKey: 'contact', href: '/contact'}
 ];
