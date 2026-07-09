@@ -9,6 +9,7 @@ import {Link, usePathname} from '@/i18n/navigation';
 import {mobileMenuOpenAtom} from '@/store';
 import {Button} from '@/components/ui/button';
 import {LanguageSwitcher} from './LanguageSwitcher';
+import Image from 'next/image';
 
 export function Header() {
   const t = useTranslations('Navigation');
@@ -27,9 +28,17 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b bg-background/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2 font-bold tracking-tight text-primary">
-          <span className="flex size-9 items-center justify-center rounded-xl bg-primary text-sm text-primary-foreground">
+          {/* <span className="flex size-9 items-center justify-center rounded-xl bg-primary text-sm text-primary-foreground">
             NZ
-          </span>
+          </span> */}
+           <Image
+    src="/logos/logo.png"
+    alt="NZ Solutions"
+    width={40}
+    height={40}
+    className="h-12 w-auto object-contain"
+    priority
+  />
           <span>{siteConfig.name}</span>
         </Link>
 
