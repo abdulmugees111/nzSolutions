@@ -94,7 +94,7 @@ export default function AboutPage() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden pt-16 sm:pt-20 lg:pt-28 pb-8 sm:pb-12">
+      <section className="relative overflow-hidden py-12 sm:py-16 lg:py-20">
         <Container className="grid items-start gap-12 lg:grid-cols-[1.05fr_0.95fr]">
 
           {/* Left */}
@@ -173,7 +173,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── WHO WE ARE ──────────────────────────────────────── */}
-      <section className="pt-16 sm:pt-20 lg:pt-28 pb-8 sm:pb-12">
+      <section className="py-12 sm:py-16 lg:py-20">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1fr_420px] lg:items-start">
 
@@ -241,7 +241,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── SERVICES ─────────────────────────────────────────── */}
-      <section className="bg-primary text-primary-foreground pt-16 sm:pt-20 lg:pt-28 pb-8 sm:pb-12">
+      <section className="bg-primary text-primary-foreground py-12 sm:py-16 lg:py-20">
         <Container>
           {/* Header row — text left, pentagon photos right */}
           <div className="mb-12 grid gap-8 lg:grid-cols-[1fr_400px] lg:items-center">
@@ -345,7 +345,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── COVID-19 POLICY ─────────────────────────────────── */}
-      <section className="border-t border-b bg-muted/40 py-16 sm:py-20 lg:py-28">
+      <section className="border-t border-b bg-muted/40 py-12 sm:py-16 lg:py-20">
         <Container>
           <div>
             <div className="rounded-[2rem] border bg-card p-4 shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(0,0,0,0.18)]">
@@ -377,7 +377,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── CAREERS CTA ─────────────────────────────────────── */}
-      <section className="pt-8 pb-16 sm:pb-20 lg:pb-28">
+      <section className="py-12 sm:py-16 lg:py-20">
         <Container>
           <div className="rounded-[2rem] border bg-card p-4 shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(0,0,0,0.18)] cursor-pointer">
             <div className="rounded-[1.5rem] bg-primary p-6 sm:p-8">
