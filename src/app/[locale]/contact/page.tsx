@@ -21,7 +21,7 @@ export default function ContactPage() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden py-12 sm:py-16 lg:py-20">
+      <section className="relative overflow-hidden pt-12 sm:pt-16 lg:pt-20 pb-6 sm:pb-8">
         <Container className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
 
           {/* Left */}
@@ -113,37 +113,41 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      {/* ── FORM ─────────────────────────────────────────────── */}
-      <section className="py-12 sm:py-16 lg:py-20">
+      {/* ── FORM + MAP ───────────────────────────────────────── */}
+      <section className="pt-8 sm:pt-10 pb-12 sm:pb-16 lg:pb-20">
         <Container>
-          <div className="max-w-2xl mx-auto">
-            <p className="text-base font-bold uppercase tracking-widest text-secondary">Send a Message</p>
-            <h2 className="mt-4 text-3xl font-black tracking-tight text-foreground sm:text-4xl">Tell us about your project.</h2>
-            <p className="mt-3 text-base leading-7 text-muted-foreground">
-              Fill in the form below and a member of our team will get back to you with the best
-              solution for your telecom or digital engineering project.
-            </p>
-            <div className="mt-6">
-              <ContactForm />
-            </div>
-          </div>
-        </Container>
-      </section>
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
 
-      {/* ── MAP ──────────────────────────────────────────────── */}
-      <section className="border-t bg-muted/40 py-12 sm:py-16 lg:py-20">
-        <Container>
-          <p className="mb-6 text-base font-bold uppercase tracking-widest text-secondary">Find Us</p>
-          <div className="overflow-hidden rounded-[2rem] border shadow-sm">
-            <iframe
-              title="NZ Solutions LTD location"
-              width="100%"
-              height="420"
-              style={{border: 0, display: 'block'}}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              src="https://maps.google.com/maps?q=NZ+Solutions+LTD,+Suite+314,+Stanmore+Business+Centre,+Howard+Road,+Stanmore,+HA7+1BT&t=&z=15&ie=UTF8&iwloc=&output=embed"
-            />
+            {/* Left — form */}
+            <div>
+              <p className="text-base font-bold uppercase tracking-widest text-secondary">Send a Message</p>
+              <h2 className="mt-4 text-3xl font-black tracking-tight text-foreground sm:text-4xl">Tell us about your project.</h2>
+              <p className="mt-3 text-base leading-7 text-muted-foreground">
+                Fill in the form below and a member of our team will get back to you with the best
+                solution for your telecom or digital engineering project.
+              </p>
+              <div className="mt-6">
+                <ContactForm />
+              </div>
+            </div>
+
+            {/* Right — map */}
+            <div className="lg:sticky lg:top-24">
+              <p className="text-base font-bold uppercase tracking-widest text-secondary">Find Us</p>
+              <p className="mt-2 mb-5 text-sm text-muted-foreground">Suite 314, Stanmore Business Centre, Howard Road, Stanmore, HA7 1BT</p>
+              <div className="overflow-hidden rounded-[2rem] border shadow-sm">
+                <iframe
+                  title="NZ Solutions LTD location"
+                  width="100%"
+                  height="480"
+                  style={{border: 0, display: 'block'}}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src="https://maps.google.com/maps?q=NZ+Solutions+LTD,+Suite+314,+Stanmore+Business+Centre,+Howard+Road,+Stanmore,+HA7+1BT&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                />
+              </div>
+            </div>
+
           </div>
         </Container>
       </section>
