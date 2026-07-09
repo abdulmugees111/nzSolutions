@@ -30,8 +30,8 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="rounded-3xl border bg-card p-5 shadow-sm sm:p-8">
-      <div className="grid gap-5">
+    <form onSubmit={handleSubmit(onSubmit)} className="rounded-3xl border bg-card p-4 shadow-sm sm:p-5">
+      <div className="grid gap-3">
         <div>
           <label className="text-sm font-medium" htmlFor="name">Name</label>
           <Input id="name" className="mt-2" placeholder="Your name" {...register('name')} />
@@ -61,7 +61,7 @@ export function ContactForm() {
 
         <div>
           <label className="text-sm font-medium" htmlFor="message">Message</label>
-          <Textarea id="message" className="mt-2" placeholder="Tell us about your project" {...register('message')} />
+          <Textarea id="message" className="mt-2" rows={3} placeholder="Tell us about your project" {...register('message')} />
           {errors.message ? <p className="mt-1 text-xs text-red-600">{errors.message.message}</p> : null}
         </div>
 

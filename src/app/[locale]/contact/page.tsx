@@ -116,30 +116,31 @@ export default function ContactPage() {
       {/* ── FORM + MAP ───────────────────────────────────────── */}
       <section className="pt-8 sm:pt-10 pb-12 sm:pb-16 lg:pb-20">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
+          {/* Section heading — full width above grid */}
+          <div className="mb-8">
+            <p className="text-base font-bold uppercase tracking-widest text-secondary">Send a Message</p>
+            <h2 className="mt-3 text-3xl font-black tracking-tight text-foreground sm:text-4xl">Tell us about your project.</h2>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground max-w-xl">
+              Fill in the form and a member of our team will get back to you with the best solution for your project.
+            </p>
+          </div>
 
-            {/* Left — form */}
+          <div className="grid gap-8 lg:grid-cols-[5fr_7fr] lg:items-start">
+
+            {/* Left — form (narrower) */}
             <div>
-              <p className="text-base font-bold uppercase tracking-widest text-secondary">Send a Message</p>
-              <h2 className="mt-4 text-3xl font-black tracking-tight text-foreground sm:text-4xl">Tell us about your project.</h2>
-              <p className="mt-3 text-base leading-7 text-muted-foreground">
-                Fill in the form below and a member of our team will get back to you with the best
-                solution for your telecom or digital engineering project.
-              </p>
-              <div className="mt-6">
-                <ContactForm />
-              </div>
+              <ContactForm />
             </div>
 
             {/* Right — map */}
             <div className="lg:sticky lg:top-24">
-              <p className="text-base font-bold uppercase tracking-widest text-secondary">Find Us</p>
-              <p className="mt-2 mb-5 text-sm text-muted-foreground">Suite 314, Stanmore Business Centre, Howard Road, Stanmore, HA7 1BT</p>
+              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-secondary">Find Us</p>
+              <p className="mb-4 text-sm text-muted-foreground">Suite 314, Stanmore Business Centre, Howard Road, Stanmore, HA7 1BT</p>
               <div className="overflow-hidden rounded-[2rem] border shadow-sm">
                 <iframe
                   title="NZ Solutions LTD location"
                   width="100%"
-                  height="480"
+                  height="360"
                   style={{border: 0, display: 'block'}}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
