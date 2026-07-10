@@ -13,7 +13,7 @@ export function PartnersCarousel() {
         <SectionHeader
           eyebrow="Trusted ecosystem"
           title="Partners and technology networks we work with"
-          description="A responsive logo carousel for telecom, infrastructure, and digital delivery partners. Replace the sample logos with your real partner images inside public/logos/partners."
+          // description="A responsive logo carousel for telecom, infrastructure, and digital delivery partners. Replace the sample logos with your real partner images inside public/logos/partners."
         />
 
         <div className="relative mt-10 overflow-hidden rounded-3xl border bg-card py-6 shadow-sm sm:py-8">

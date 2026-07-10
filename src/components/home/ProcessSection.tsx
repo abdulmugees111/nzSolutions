@@ -24,7 +24,7 @@ export function ProcessSection() {
         <SectionHeader
           eyebrow="Process"
           title="A simple process from discovery to support."
-          description="This keeps your client journey clear and makes the company look organized and professional."
+          // description="This keeps your client journey clear and makes the company look organized and professional."
         />
 
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">

@@ -5,6 +5,7 @@ import {AboutValues} from '@/components/about/AboutValues';
 import {AboutServices} from '@/components/about/AboutServices';
 import {AboutCovidPolicy} from '@/components/about/AboutCovidPolicy';
 import {AboutCareersCta} from '@/components/about/AboutCareersCta';
+import {IndustriesSection} from '@/components/home/IndustriesSection';
 
 export const metadata = {
   title: 'About Us',
@@ -21,7 +22,7 @@ export default function AboutPage() {
       <AboutServices />
       <AboutCovidPolicy />
       <AboutCareersCta />
-      <AccreditationsBanner />
-    </>
+            <IndustriesSection />
+          </>
   );
 }

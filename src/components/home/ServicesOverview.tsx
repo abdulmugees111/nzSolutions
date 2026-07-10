@@ -22,7 +22,7 @@ export function ServicesOverview() {
       <SectionHeader
         eyebrow="What we do"
         title="Building Reliable Telecom Infrastructure and Modern Digital Products."
-        description="Use separate service pages for better SEO, but keep this homepage overview clean and easy to scan."
+        // description="Use separate service pages for better SEO, but keep this homepage overview clean and easy to scan."
       />
 
       <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
