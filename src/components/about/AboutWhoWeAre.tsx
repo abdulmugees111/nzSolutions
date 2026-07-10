@@ -46,7 +46,7 @@ export function AboutWhoWeAre() {
         <div className="grid gap-10 lg:grid-cols-[1fr_360px] lg:items-start">
 
           {/* Left — timeline */}
-          <div className="relative">
+          <div className="relative order-2 lg:order-1">
             <div className="absolute left-[22px] top-6 bottom-6 w-px bg-gradient-to-b from-primary/30 via-primary/20 to-[#2d7a3a]/30" />
             <div className="space-y-0">
               {milestones.map((m, i) => (
@@ -77,39 +77,15 @@ export function AboutWhoWeAre() {
           </div>
 
           {/* Right — real photo card */}
-          <div className="-mt-10 overflow-hidden rounded-3xl border shadow-md">
+          <div className="order-1 lg:order-2 -mt-0 lg:-mt-9 overflow-hidden rounded-3xl border shadow-md">
             <div className="relative aspect-[4/3] w-full">
               <Image
-                src="/images/fttp-fibre.jpg"
-                alt="FTTP fibre optic cable installation"
+                src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80"
+                alt="Network cabling infrastructure"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 360px"
               />
-              {/* Overlay badge */}
-              <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between rounded-xl bg-black/60 px-3 py-2 backdrop-blur-sm">
-                <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-white/60">Est. 2012</p>
-                  <p className="text-sm font-bold text-white">UK-Wide FTTP Infrastructure</p>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <span className="size-2 rounded-full bg-green-400" />
-                  <span className="text-[10px] font-medium text-white/80">Active</span>
-                </div>
-              </div>
-            </div>
-            {/* Stats strip */}
-            <div className="grid grid-cols-3 divide-x bg-primary text-white">
-              {[
-                {val:'13+', label:'Years'},
-                {val:'UK', label:'Coverage'},
-                {val:'24/7', label:'Operations'},
-              ].map((s) => (
-                <div key={s.label} className="flex flex-col items-center py-3">
-                  <span className="text-lg font-black">{s.val}</span>
-                  <span className="text-[9px] font-semibold uppercase tracking-wider text-white/60">{s.label}</span>
-                </div>
-              ))}
             </div>
           </div>
 

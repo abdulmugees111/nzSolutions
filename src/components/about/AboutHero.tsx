@@ -1,5 +1,4 @@
 import {Container} from '@/components/common/Container';
-import {SectionHeader} from '@/components/common/SectionHeader';
 
 function AboutIllustration() {
   return (
@@ -108,13 +107,16 @@ export function AboutHero() {
       </svg>
 
       <Container className="relative grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="flex flex-col justify-center">
-          <SectionHeader
-            as="h1"
-            eyebrow="About NZ Solutions"
-            title="Network & infrastructure partners since 2012."
-            description="We deliver complete turnkey fixed-line telecom solutions — from survey and design through civils, installation, splicing, commissioning, and full FTTP builds across the UK."
-          />
+        <div className="flex flex-col justify-center max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-wide text-secondary">
+            Network &amp; Infrastructure
+          </p>
+          <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl text-foreground">
+            About Us
+          </h1>
+          <p className="mt-4 text-base leading-7 sm:text-lg text-muted-foreground">
+            We deliver complete turnkey fixed-line telecom solutions — from survey and design through civils, installation, splicing, commissioning, and full FTTP builds across the UK.
+          </p>
         </div>
         <AboutIllustration />
       </Container>
