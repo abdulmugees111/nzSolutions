@@ -62,7 +62,13 @@ export function Hero() {
           <Container className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
     <div>
       <Badge>{homeContent.hero.eyebrow}</Badge>
-      <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl xl:text-7xl">
+      <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground 
+      sm:text-4xl
+       md:text-4xl
+      lg:text-5xl
+      xl:text-6xl
+      2xl:text-7xl
+        ">
         {homeContent.hero.title}
       </h1>
       <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg lg:text-xl">

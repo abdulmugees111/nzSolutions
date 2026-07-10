@@ -13,6 +13,9 @@ div:focus, section:focus, article:focus {
   --primary: 224 74% 27%;
   --primary-foreground: 0 0% 100%;
   /* --secondary: 194 100% 42%; */
+    /* #3B9530 */
+  --brand-green: 113 51% 39%;
+
   --secondary: 190 98% 50%;
   --secondary-foreground: 222 47% 11%;
   --muted: 210 40% 96%;
@@ -34,6 +37,8 @@ div:focus, section:focus, article:focus {
   --color-primary-foreground: hsl(var(--primary-foreground));
   --color-secondary: hsl(var(--secondary));
   --color-secondary-foreground: hsl(var(--secondary-foreground));
+    --color-brand-green: hsl(var(--brand-green));
+
   --color-muted: hsl(var(--muted));
   --color-muted-foreground: hsl(var(--muted-foreground));
   --color-accent: hsl(var(--accent));
