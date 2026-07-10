@@ -13,14 +13,14 @@ export async function generateMetadata({params}: {params: Promise<{slug: string}
   const {slug} = await params;
   const service = services.find((item) => item.slug === slug);
 
-  if (!service) {
-    return {};
-  }
+  // if (!service) {
+  //   return {};
+  // }
 
-  return {
-    title: service?.seoTitle,
-    description: service?.seoDescription
-  };
+  // return {
+  //   title: service?.seoTitle,
+  //   description: service?.seoDescription
+  // };
 }
 
 export default async function ServiceDetailPage({params}: {params: Promise<{slug: string}>}) {
