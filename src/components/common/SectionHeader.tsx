@@ -4,12 +4,16 @@ export function SectionHeader({
   eyebrow,
   title,
   description,
-  align = 'center'
+  align = 'left',
+  inverted = false,
+  as: Tag = 'h2',
 }: {
   eyebrow?: string;
   title: string;
   description?: string;
   align?: 'left' | 'center';
+  inverted?: boolean;
+  as?: 'h1' | 'h2';
 }) {
   return (
     <div className={cn('max-w-3xl', align === 'center' && 'mx-auto text-center')}>
