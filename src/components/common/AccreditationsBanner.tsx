@@ -1,9 +1,11 @@
+import {Container} from '@/components/common/Container';
+
 export function AccreditationsBanner() {
   return (
-    <section className="border-t bg-card py-16 sm:py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="border-t bg-card py-14 sm:py-20 lg:py-24">
+      <Container>
 
-        <p className="mb-16 text-center text-sm font-black uppercase tracking-[0.25em] text-foreground">
+        <p className="mb-10 text-center text-sm font-black uppercase tracking-[0.25em] text-foreground">
           Accreditations &amp; Memberships
         </p>
 
@@ -123,7 +125,7 @@ export function AccreditationsBanner() {
           </div>
 
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
