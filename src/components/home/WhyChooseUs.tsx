@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 
 import { Container } from "@/components/common/Container";
+import { SectionHeader } from "@/components/common/SectionHeader";
 
 type Reason = {
   title: string;
@@ -52,19 +53,11 @@ export function WhyChooseUs() {
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           {/* Left content */}
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wide text-secondary">
-              Why choose us
-            </p>
-
-            <h2 className="mt-3 max-w-xl text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Built for companies that need reliable delivery.
-            </h2>
-
-            <p className="mt-5 max-w-xl leading-7 text-muted-foreground">
-              NZ Solutions combines infrastructure discipline with modern
-              software development so your digital systems are practical,
-              scalable, and business-ready.
-            </p>
+            <SectionHeader
+              eyebrow="Why choose us"
+              title="Built for companies that need reliable delivery."
+              description="NZ Solutions combines infrastructure discipline with modern software development so your digital systems are practical, scalable, and business-ready."
+            />
           </div>
 
           {/* Reasons cards */}
