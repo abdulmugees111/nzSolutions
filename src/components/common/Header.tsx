@@ -251,10 +251,10 @@ export function Header() {
       </div>
 
       {/* Mobile navigation */}
-      {open ? (
+      {/* {open ? (
         <div className="border-t bg-background px-4 py-4 lg:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col gap-2">
-            {navigation.map((item) => {
+             {navigation.slice(0, 3).map((item) => {
               const isActive = isActiveRoute(item.href);
               const isServicesItem = item.href === '/services';
 
@@ -347,7 +347,7 @@ export function Header() {
             })}
 
             <div className="flex items-center gap-2 pt-2">
-              <LanguageSwitcher />
+              <LanguageSwitcher /> 
 
               <Button asChild className="flex-1">
                 <Link href="/contact" onClick={closeMobileMenu}>
@@ -357,7 +357,165 @@ export function Header() {
             </div>
           </nav>
         </div>
-      ) : null}
+      ) : null} */}
+      {/* Mobile navigation */}
+{open ? (
+  <div
+    className="
+      max-h-[calc(100dvh-4rem)]
+      overflow-y-auto overscroll-contain
+      border-t bg-background
+      px-4 py-4
+      pb-[calc(1rem+env(safe-area-inset-bottom))]
+      lg:hidden
+    "
+  >
+    <nav className="mx-auto flex max-w-7xl flex-col gap-2">
+      {navigation.slice(0, 3).map((item) => {
+        const isActive = isActiveRoute(item.href);
+        const isServicesItem = item.href === '/services';
+
+        if (isServicesItem) {
+          return (
+            <div key={item.href}>
+              {/* Services main row */}
+              <div
+                className={`flex items-center rounded-lg transition-colors ${
+                  isActive
+                    ? 'bg-primary/10 text-primary'
+                    : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                }`}
+              >
+                <Link
+                  href="/services"
+                  className="flex-1 px-3 py-2.5 text-sm font-semibold"
+                  onClick={closeMobileMenu}
+                >
+                  {item.labelKey
+                    ? t(item.labelKey)
+                    : 'Services'}
+                </Link>
+
+                <button
+                  type="button"
+                  className="
+                    flex size-11 shrink-0 items-center
+                    justify-center rounded-lg
+                  "
+                  aria-label={
+                    mobileServicesOpen
+                      ? 'Hide service categories'
+                      : 'Show service categories'
+                  }
+                  aria-expanded={mobileServicesOpen}
+                  onClick={() =>
+                    setMobileServicesOpen(
+                      (current) => !current
+                    )
+                  }
+                >
+                  <ChevronDown
+                    size={18}
+                    className={`transition-transform duration-200 ${
+                      mobileServicesOpen
+                        ? 'rotate-180'
+                        : ''
+                    }`}
+                  />
+                </button>
+              </div>
+
+              {/* Services dropdown */}
+              {mobileServicesOpen ? (
+                <div className="ml-3 mt-2 border-l border-border pl-3">
+                  <div className="space-y-1">
+                    {serviceCategories.map((category) => {
+                      const Icon =
+                        categoryIcon[category.key];
+
+                      return (
+                        <Link
+                          key={category.key}
+                          href={category.href}
+                          className="
+                            flex min-h-11 items-center gap-3
+                            rounded-lg px-3 py-2.5
+                            text-sm font-semibold
+                            text-muted-foreground
+                            transition-colors
+                            hover:bg-muted
+                            hover:text-foreground
+                          "
+                          onClick={closeMobileMenu}
+                        >
+                          <Icon
+                            size={18}
+                            className="shrink-0 text-primary"
+                          />
+
+                          <span>{category.label}</span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+
+                  {/* Mobile View all option */}
+                  <div className="mt-2 border-t pt-2">
+                    <Link
+                      href="/services"
+                      className="
+                        flex min-h-11 items-center
+                        rounded-lg px-3 py-2.5
+                        text-sm font-semibold text-primary
+                        transition-colors
+                        hover:bg-primary/5
+                      "
+                      onClick={closeMobileMenu}
+                    >
+                      View all services
+                    </Link>
+                  </div>
+                </div>
+              ) : null}
+            </div>
+          );
+        }
+
+        return (
+          <Link
+            key={item.href}
+            href={item.href}
+            className={`rounded-lg px-3 py-2.5 text-sm font-semibold transition-colors ${
+              isActive
+                ? 'bg-primary/10 text-primary'
+                : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+            }`}
+            onClick={closeMobileMenu}
+          >
+            {item.labelKey
+              ? t(item.labelKey)
+              : '/'}
+          </Link>
+        );
+      })}
+
+      {/* Contact button */}
+      <div className="pt-3">
+        <Button
+          asChild
+          className="h-11 w-full rounded-xl"
+        >
+          <Link
+            href="/contact"
+            onClick={closeMobileMenu}
+          >
+            {t('contact')}
+          </Link>
+        </Button>
+      </div>
+    </nav>
+  </div>
+) : null}
     </header>
   );
 }
