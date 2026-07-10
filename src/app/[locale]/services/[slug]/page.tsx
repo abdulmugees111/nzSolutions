@@ -17,8 +17,8 @@ export async function generateMetadata({params}: {params: Promise<{slug: string}
   }
 
   return {
-    title: service.seoTitle,
-    description: service.seoDescription
+    title: service?.seoTitle,
+    description: service?.seoDescription
   };
 }
 

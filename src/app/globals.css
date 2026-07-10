@@ -5,9 +5,11 @@
   --foreground: 222 47% 11%;
   --card: 0 0% 100%;
   --card-foreground: 222 47% 11%;
-  --primary: 214 82% 25%;
+  /* --primary: 214 82% 25%; */
+  --primary: 224 74% 27%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 194 100% 42%;
+  /* --secondary: 194 100% 42%; */
+  --secondary: 190 98% 50%;
   --secondary-foreground: 222 47% 11%;
   --muted: 210 40% 96%;
   --muted-foreground: 215 16% 47%;
@@ -67,4 +69,17 @@ canvas {
 
 .section-padding {
   @apply py-14 sm:py-20 lg:py-24;
+}
+
+@keyframes partners-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.partners-carousel-track {
+  animation: partners-scroll 25s linear infinite;
 }
