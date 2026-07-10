@@ -3,6 +3,7 @@ import {NextIntlClientProvider} from 'next-intl';
 import {hasLocale} from 'next-intl';
 import {notFound} from 'next/navigation';
 import '../globals.css';
+
 import {AppProviders} from '@/components/providers/AppProviders';
 import {Footer} from '@/components/common/Footer';
 import {Header} from '@/components/common/Header';
@@ -58,11 +59,13 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body>
+      <body suppressHydrationWarning>
         <NextIntlClientProvider>
           <AppProviders>
             <Header />
+
             <main>{children}</main>
+
             <Footer />
           </AppProviders>
         </NextIntlClientProvider>

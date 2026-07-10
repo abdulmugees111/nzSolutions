@@ -3,7 +3,6 @@ import {Container} from '@/components/common/Container';
 import {CTASection} from '@/components/home/CTASection';
 import {ServiceDetail} from '@/components/services/ServiceDetail';
 import {services} from '@/constants/services';
-import {NeuralHoverBackground} from '@/components/common/NeuralHoverBackground';
 
 export function generateStaticParams() {
   return services.map((service) => ({slug: service.slug}));
@@ -13,14 +12,14 @@ export async function generateMetadata({params}: {params: Promise<{slug: string}
   const {slug} = await params;
   const service = services.find((item) => item.slug === slug);
 
-  // if (!service) {
-  //   return {};
-  // }
+  if (!service) {
+    return {};
+  }
 
-  // return {
-  //   title: service?.seoTitle,
-  //   description: service?.seoDescription
-  // };
+  return {
+    title: service?.seoTitle,
+    description: service?.seoDescription
+  };
 }
 
 export default async function ServiceDetailPage({params}: {params: Promise<{slug: string}>}) {
@@ -33,14 +32,9 @@ export default async function ServiceDetailPage({params}: {params: Promise<{slug
 
   return (
     <>
-       <main className="relative overflow-hidden bg-background">
-          <NeuralHoverBackground />
-    
       <Container className="section-padding">
         <ServiceDetail service={service} />
       </Container>
-          </main>
-
       <CTASection />
     </>
   );
