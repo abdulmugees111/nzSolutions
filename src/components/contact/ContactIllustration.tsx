@@ -1,7 +1,7 @@
 export function ContactIllustration() {
   return (
-    <div className="hidden lg:flex items-center justify-center">
-      <svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-[400px]" aria-hidden="true">
+    <div className="flex items-center justify-center">
+      <svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-[280px] sm:max-w-[360px] lg:max-w-[400px]" aria-hidden="true">
         <ellipse cx="200" cy="185" rx="165" ry="150" fill="hsl(var(--primary) / 0.05)"/>
 
         <rect x="60" y="90" width="280" height="185" rx="18" fill="white" stroke="hsl(var(--primary) / 0.12)" strokeWidth="1.5" filter="url(#ci-shadow)"/>

@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+div:focus, section:focus, article:focus {
+  outline: none;
+}
+
 :root {
   --background: 210 40% 98%;
   --foreground: 222 47% 11%;

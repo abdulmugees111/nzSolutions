@@ -20,7 +20,7 @@ export function ContactHero() {
         </defs>
         <rect width="100%" height="100%" fill="url(#contact-net)" />
       </svg>
-      <Container className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+      <Container className="grid items-center gap-8 lg:gap-12 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <SectionHeader
             as="h1"
@@ -49,7 +49,7 @@ export default function ContactPage() {
     <>
       {/* ── HERO ─────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-12 sm:pt-16 lg:pt-20 pb-6 sm:pb-8">
-        <Container className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+        <Container className="grid items-center gap-8 lg:gap-12 lg:grid-cols-[1.05fr_0.95fr]">
 
           {/* Left */}
           <div>
@@ -74,8 +74,8 @@ export default function ContactPage() {
           </div>
 
           {/* Right — illustration */}
-          <div className="hidden lg:flex items-center justify-center">
-            <svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-[400px]" aria-hidden="true">
+          <div className="flex items-center justify-center">
+            <svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-[280px] sm:max-w-[360px] lg:max-w-[400px]" aria-hidden="true">
               {/* Soft background blob */}
               <ellipse cx="200" cy="185" rx="165" ry="150" fill="hsl(var(--primary) / 0.05)"/>
 

@@ -5,15 +5,18 @@ const serviceGroups = [
   {
     title: 'Planning & Design',
     items: ['Project Management', 'Survey, Design & Planning', 'Network Audits & Design', 'Fibre Access HLD Services', 'Fibre Access LLD Services'],
-    featured: true,
   },
   {
-    title: 'Civil & Cable',
-    items: ['Civils', 'Cable Installation', 'Splicing & Termination', 'FTTP – PONs Building', 'FTTP – Spines Building'],
+    title: 'Civil Works',
+    items: ['Civils', 'Cable Installation', 'Splicing & Termination'],
+  },
+  {
+    title: 'FTTP Builds',
+    items: ['FTTP – PONs Building', 'FTTP – Spines Building', 'ODF Installations'],
   },
   {
     title: 'Commissioning',
-    items: ['OTH Testing & Commissioning', 'Headend (OTH) Installations', 'ODF Installations', 'OTH Data Mapping', 'DSLAM / Night Migrations'],
+    items: ['OTH Testing & Commissioning', 'Headend (OTH) Installations', 'OTH Data Mapping', 'DSLAM / Night Migrations'],
   },
   {
     title: 'Infrastructure',
@@ -75,7 +78,8 @@ export function AboutServices() {
           {serviceGroups.map((group) => (
             <div
               key={group.title}
-              className="group rounded-xl bg-white/95 p-3.5 text-foreground shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              className="group rounded-xl bg-white/95 p-3.5 text-foreground shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg outline-none focus:outline-none select-none"
+            tabIndex={-1}
             >
               <div className="mb-2 flex items-center justify-between">
                 <p className="text-[11px] font-black text-primary">{group.title}</p>
@@ -85,7 +89,7 @@ export function AboutServices() {
               </div>
               <div className="space-y-1">
                 {group.items.map((item, index) => (
-                  <div key={item} className="flex items-center gap-1.5 rounded-md bg-muted/70 px-2 py-1 transition-colors group-hover:bg-primary/5">
+                  <div key={item} className="flex items-center gap-2 py-1">
                     <span className="flex size-3.5 shrink-0 items-center justify-center rounded-full bg-secondary/20 text-[7px] font-bold text-primary">
                       {index + 1}
                     </span>
