@@ -27,7 +27,7 @@ const industryImages = [
 
 export function IndustriesSection() {
   return (
-    <section className="bg-white">
+    // <section className="bg-white">
       <Container className="section-padding">
         <div className="flex flex-wrap items-center justify-center gap-20 lg:gap-26">
           {industryImages.map((image, index) => (
@@ -45,7 +45,7 @@ export function IndustriesSection() {
           ))}
         </div>
       </Container>
-    </section>
+    // </section>
   );
 }
 

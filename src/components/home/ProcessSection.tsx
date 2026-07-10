@@ -4,6 +4,7 @@ import {processSteps} from '@/constants/process';
 
 export function ProcessSection() {
   return (
+        <section className="bg-white">
     <Container className="section-padding">
       <SectionHeader
         eyebrow="Process"
@@ -20,5 +21,6 @@ export function ProcessSection() {
         ))}
       </div>
     </Container>
+    </section>
   );
 }
