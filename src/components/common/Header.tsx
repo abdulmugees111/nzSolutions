@@ -1,6 +1,6 @@
 'use client';
 
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import Image from 'next/image';
 import {
   ChevronDown,
@@ -26,6 +26,7 @@ export function Header() {
 
   const [open, setOpen] = useAtom(mobileMenuOpenAtom);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
 
   const isActiveRoute = (href: string) => {
     const pathWithoutQuery = href.split('?')[0];
@@ -45,6 +46,20 @@ export function Header() {
     setMobileServicesOpen(false);
   };
 
+  const closeDesktopServices = () => {
+    setDesktopServicesOpen(false);
+  };
+
+  /*
+   * Close menus whenever the pathname changes.
+   * This also handles browser back/forward navigation.
+   */
+  useEffect(() => {
+    setDesktopServicesOpen(false);
+    setMobileServicesOpen(false);
+    setOpen(false);
+  }, [pathname, setOpen]);
+
   const categoryIcon = {
     telecom: RadioTower,
     digital: MonitorSmartphone
@@ -57,6 +72,10 @@ export function Header() {
         <Link
           href="/"
           className="flex items-center gap-2 font-bold tracking-tight text-primary"
+          onClick={() => {
+            closeDesktopServices();
+            closeMobileMenu();
+          }}
         >
           <Image
             src="/logos/logo.png"
@@ -72,15 +91,32 @@ export function Header() {
 
         {/* Desktop navigation */}
         <nav className="hidden items-center gap-7 lg:flex">
-          {navigation.slice(0, 4).map((item) => {
+          {navigation.slice(0, 3).map((item) => {
             const isActive = isActiveRoute(item.href);
             const isServicesItem = item.href === '/services';
 
             if (isServicesItem) {
               return (
-                <div key={item.href} className="group relative">
+                <div
+                  key={item.href}
+                  className="relative"
+                  onMouseEnter={() => setDesktopServicesOpen(true)}
+                  onMouseLeave={closeDesktopServices}
+                  onFocusCapture={() => setDesktopServicesOpen(true)}
+                  onBlurCapture={(event) => {
+                    const nextFocusedElement =
+                      event.relatedTarget as Node | null;
+
+                    if (
+                      !event.currentTarget.contains(nextFocusedElement)
+                    ) {
+                      closeDesktopServices();
+                    }
+                  }}
+                >
                   <Link
                     href={item.href}
+                    onClick={closeDesktopServices}
                     className={`relative flex items-center gap-1.5 pb-1 text-sm font-semibold transition-colors ${
                       isActive
                         ? 'text-primary after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-full after:rounded-full after:bg-primary'
@@ -93,21 +129,24 @@ export function Header() {
 
                     <ChevronDown
                       size={15}
-                      className="transition-transform duration-200 group-hover:rotate-180"
+                      className={`transition-transform duration-200 ${
+                        desktopServicesOpen ? 'rotate-180' : ''
+                      }`}
                     />
                   </Link>
 
                   {/* Hover bridge and dropdown */}
                   <div
-                    className="
-                      invisible pointer-events-none absolute left-1/2 top-full
-                      z-50 w-80 -translate-x-1/2 translate-y-2 pt-4 opacity-0
+                    className={`
+                      absolute left-1/2 top-full z-50 w-80
+                      -translate-x-1/2 pt-4
                       transition-all duration-200
-                      group-hover:visible group-hover:pointer-events-auto
-                      group-hover:translate-y-0 group-hover:opacity-100
-                      group-focus-within:visible group-focus-within:pointer-events-auto
-                      group-focus-within:translate-y-0 group-focus-within:opacity-100
-                    "
+                      ${
+                        desktopServicesOpen
+                          ? 'visible pointer-events-auto translate-y-0 opacity-100'
+                          : 'invisible pointer-events-none translate-y-2 opacity-0'
+                      }
+                    `}
                   >
                     <div className="overflow-hidden rounded-2xl border bg-background p-2 shadow-xl">
                       <div className="px-3 pb-2 pt-2">
@@ -124,17 +163,19 @@ export function Header() {
                             <Link
                               key={category.key}
                               href={category.href}
+                              onClick={closeDesktopServices}
                               className="
-                                group/category flex items-start gap-3 rounded-xl
-                                px-3 py-3 transition-colors
+                                group/category flex items-start gap-3
+                                rounded-xl px-3 py-3 transition-colors
                                 hover:bg-primary/5
                               "
                             >
                               <span
                                 className="
-                                  mt-0.5 flex size-10 shrink-0 items-center
-                                  justify-center rounded-xl bg-primary/10
-                                  text-primary transition-colors
+                                  mt-0.5 flex size-10 shrink-0
+                                  items-center justify-center rounded-xl
+                                  bg-primary/10 text-primary
+                                  transition-colors
                                   group-hover/category:bg-primary
                                   group-hover/category:text-primary-foreground
                                 "
@@ -159,6 +200,7 @@ export function Header() {
                       <div className="mt-2 border-t px-3 pb-1 pt-3">
                         <Link
                           href="/services"
+                          onClick={closeDesktopServices}
                           className="text-sm font-semibold text-primary hover:underline"
                         >
                           View all services
@@ -174,6 +216,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={closeDesktopServices}
                 className={`relative pb-1 text-sm font-semibold transition-colors ${
                   isActive
                     ? 'text-primary after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-full after:rounded-full after:bg-primary'
@@ -189,7 +232,9 @@ export function Header() {
         {/* Desktop contact button */}
         <div className="hidden items-center gap-2 lg:flex">
           <Button asChild>
-            <Link href="/contact">{t('contact')}</Link>
+            <Link href="/contact" onClick={closeDesktopServices}>
+              {t('contact')}
+            </Link>
           </Button>
         </div>
 
@@ -228,7 +273,9 @@ export function Header() {
                         className="flex-1 px-3 py-2 text-sm font-semibold"
                         onClick={closeMobileMenu}
                       >
-                        {item.labelKey ? t(item.labelKey) : 'Services'}
+                        {item.labelKey
+                          ? t(item.labelKey)
+                          : 'Services'}
                       </Link>
 
                       <button
@@ -237,7 +284,9 @@ export function Header() {
                         aria-label="Show service categories"
                         aria-expanded={mobileServicesOpen}
                         onClick={() =>
-                          setMobileServicesOpen((current) => !current)
+                          setMobileServicesOpen(
+                            (current) => !current
+                          )
                         }
                       >
                         <ChevronDown
@@ -259,14 +308,18 @@ export function Header() {
                               key={category.key}
                               href={category.href}
                               className="
-                                flex items-center gap-3 rounded-lg px-3 py-2.5
-                                text-sm font-semibold text-muted-foreground
-                                transition-colors hover:bg-muted
-                                hover:text-foreground
+                                flex items-center gap-3 rounded-lg
+                                px-3 py-2.5 text-sm font-semibold
+                                text-muted-foreground transition-colors
+                                hover:bg-muted hover:text-foreground
                               "
                               onClick={closeMobileMenu}
                             >
-                              <Icon size={17} className="text-primary" />
+                              <Icon
+                                size={17}
+                                className="text-primary"
+                              />
+
                               {category.label}
                             </Link>
                           );
