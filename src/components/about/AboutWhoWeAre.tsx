@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import telecomeWorkflow from '@/assets/images/about/telecom-workflow.png.jpeg';
 import {Container} from '@/components/common/Container';
 import {SectionHeader} from '@/components/common/SectionHeader';
 
@@ -43,7 +44,7 @@ export function AboutWhoWeAre() {
           />
         </div>
 
-        <div className="grid gap-10 lg:grid-cols-[1fr_360px] lg:items-start">
+        <div className="grid gap-10 lg:grid-cols-[1fr_480px] lg:items-start">
 
           {/* Left — timeline */}
           <div className="relative order-2 lg:order-1">
@@ -76,15 +77,15 @@ export function AboutWhoWeAre() {
             </div>
           </div>
 
-          {/* Right — real photo card */}
-          <div className="order-1 lg:order-2 -mt-0 lg:-mt-9 overflow-hidden rounded-3xl border shadow-md">
-            <div className="relative aspect-[4/3] w-full">
+          {/* Right — illustration */}
+          <div className="order-1 lg:order-2 lg:-mt-4 overflow-hidden rounded-3xl border shadow-md bg-white">
+            <div className="relative aspect-[16/9] w-full">
               <Image
-                src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80"
-                alt="Network cabling infrastructure"
+                src={telecomeWorkflow}
+                alt="End-to-end telecom workflow illustration"
                 fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 360px"
+                className="object-contain p-3"
+                sizes="(max-width: 1024px) 100vw, 480px"
               />
             </div>
           </div>

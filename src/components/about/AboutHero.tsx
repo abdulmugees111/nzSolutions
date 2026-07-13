@@ -106,8 +106,8 @@ export function AboutHero() {
         <rect width="100%" height="100%" fill="url(#hero-net)" />
       </svg>
 
-      <Container className="relative grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="flex flex-col justify-center max-w-3xl">
+      <Container className="relative grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="flex flex-col justify-center max-w-3xl lg:pt-16">
           <p className="text-sm font-semibold uppercase tracking-wide text-secondary">
             Network &amp; Infrastructure
           </p>
@@ -115,7 +115,7 @@ export function AboutHero() {
             About Us
           </h1>
           <p className="mt-4 text-base leading-7 sm:text-lg text-muted-foreground">
-            We deliver complete turnkey fixed-line telecom solutions — from survey and design through civils, installation, splicing, commissioning, and full FTTP builds across the UK.
+            Delivering end-to-end fixed-line telecom and digital solutions across the UK, from FTTP survey, design and installation to digital data management, network records, testing and operational handover.
           </p>
         </div>
         <AboutIllustration />
