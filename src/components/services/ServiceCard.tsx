@@ -72,7 +72,7 @@ export function ServiceCard({service}: {service: Service}) {
         )}
       >
         <div className="relative aspect-[4/3] w-full overflow-hidden">
-          <Image
+          {/* <Image
             src={service.image}
             alt={service.title}
             fill
@@ -83,8 +83,26 @@ export function ServiceCard({service}: {service: Service}) {
               'group-hover:scale-110',
               'group-focus-within:scale-110'
             )}
-          />
-
+          /> */}
+<Image
+  src={service.image}
+  alt={service.title}
+  fill
+  sizes="
+    (max-width: 639px) calc(100vw - 2rem),
+    (max-width: 1023px) calc(50vw - 2.5rem),
+    (max-width: 1439px) calc(33.333vw - 2.5rem),
+    410px
+  "
+  quality={70}
+  placeholder="blur"
+  className={cn(
+    'object-cover',
+    'transition-transform duration-700 ease-out',
+    'group-hover:scale-110',
+    'group-focus-within:scale-110'
+  )}
+/>
           {/* Very light neutral image shading */}
           <div
             aria-hidden="true"
@@ -209,7 +227,7 @@ export function ServiceCard({service}: {service: Service}) {
               {service.title}
             </h3>
 
-            <p className="mt-4 line-clamp-3 max-w-sm text-sm leading-6 text-white/80">
+            <p className="mt-4 line-clamp-2 max-w-sm text-sm leading-6 text-white/80">
               {service.shortDescription}
             </p>
 

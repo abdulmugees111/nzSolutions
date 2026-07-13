@@ -1,12 +1,18 @@
-import Surveying from "@/assets/images/services/surveying.jpeg";
-import Civil from "@/assets/images/services/civils.jpg";
-import Cable from "@/assets/images/services/cabling-coloured.jpeg";
-import Splicing from "@/assets/images/services/Splicing.png";
-import Data from "@/assets/images/services/data-centre.jpeg";
-import Network from "@/assets/images/services/Neworking-Services.jpeg";
-import Web from "@/assets/images/services/web.jpg";
-import Mobile from "@/assets/images/services/mobile.jpg";
-import Management from "@/assets/images/services/digitalManagement.png";
+import type {StaticImageData} from 'next/image';
+
+import Surveying from '@/assets/images/services/surveying.webp';
+import Civil from '@/assets/images/services/civils.webp';
+import Cable from '@/assets/images/services/cabling.webp';
+import Splicing from '@/assets/images/services/splicing.webp';
+import Data from '@/assets/images/services/dataCentres.webp';
+import Network from '@/assets/images/services/networkServices.webp';
+import Web from '@/assets/images/services/webDevelopment.webp';
+import Mobile from '@/assets/images/services/mobile.webp';
+import Management from '@/assets/images/services/digitalManagement.webp';
+import AISolutions from '@/assets/images/services/aISolutions.webp';
+import CloudServices from '@/assets/images/services/cloudServices.webp';
+import ITConsulting from '@/assets/images/services/iTConsulting.webp';
+import DigitalMarketing from '@/assets/images/services/digitalMarketing.webp';
 
 export type ServiceCategory = "telecom" | "digital";
 
@@ -17,7 +23,7 @@ export type Service = {
   eyebrow: string;
   shortDescription: string;
   description: string;
-  image: any;
+  image: StaticImageData;
   features: string[];
   deliverables: string[];
   technologies?: string[];
@@ -494,14 +500,14 @@ We can build mobile apps using cross-platform technologies where a single codeba
     },
   },
   {
-  slug: "digital-workplace-project-management",
-  title: "Digital Workplace & Project Management",
-  category: "digital",
-  eyebrow: "Business Technology & Management",
-  shortDescription:
-    "We help businesses manage projects, teams, workflows, documentation, and digital workplace platforms using solutions such as Jira, Microsoft 365, Teams, SharePoint, and other modern management tools.",
+    slug: "digital-workplace-project-management",
+    title: "Digital Workplace & Project Management",
+    category: "digital",
+    eyebrow: "Business Technology & Management",
+    shortDescription:
+      "We help businesses manage projects, teams, workflows, documentation, and digital workplace platforms using solutions such as Jira, Microsoft 365, Teams, SharePoint, and other modern management tools.",
 
-  description: `NZ Solutions provides digital workplace, project management, and business process management services to help organisations improve collaboration, visibility, productivity, and operational control.
+    description: `NZ Solutions provides digital workplace, project management, and business process management services to help organisations improve collaboration, visibility, productivity, and operational control.
 
 We support businesses with the setup, configuration, administration, and optimisation of project management and collaboration platforms such as Jira, Microsoft 365, Microsoft Teams, SharePoint, Microsoft Planner, Microsoft Project, and Confluence.
 
@@ -511,113 +517,393 @@ Whether you need to introduce a new project management platform, improve an exis
 
 We also support project and programme delivery by helping teams define project plans, milestones, responsibilities, risks, dependencies, reporting procedures, and communication processes. Our goal is to provide businesses with clear systems that make work easier to manage, monitor, and deliver.`,
 
-  image: Management,
+    image: Management,
 
-  features: [
-    "Jira setup, configuration, and administration",
-    "Microsoft 365 setup and management",
-    "Microsoft Teams workspace configuration",
-    "SharePoint document management",
-    "Microsoft Planner and task management",
-    "Microsoft Project planning support",
-    "Confluence knowledge-base setup",
-    "Project and programme management",
-    "Agile and Scrum workflow configuration",
-    "Service desk and ticket management",
-    "Business process mapping",
-    "Workflow and approval automation",
-    "Project dashboards and reporting",
-    "Document and knowledge management",
-    "Risk, issue, and dependency tracking",
-    "User onboarding and platform training",
-    "Ongoing administration and support",
-  ],
+    features: [
+      "Jira setup, configuration, and administration",
+      "Microsoft 365 setup and management",
+      "Microsoft Teams workspace configuration",
+      "SharePoint document management",
+      "Microsoft Planner and task management",
+      "Microsoft Project planning support",
+      "Confluence knowledge-base setup",
+      "Project and programme management",
+      "Agile and Scrum workflow configuration",
+      "Service desk and ticket management",
+      "Business process mapping",
+      "Workflow and approval automation",
+      "Project dashboards and reporting",
+      "Document and knowledge management",
+      "Risk, issue, and dependency tracking",
+      "User onboarding and platform training",
+      "Ongoing administration and support",
+    ],
 
-  deliverables: [
-    "Configured project management platform",
-    "Microsoft 365 digital workplace setup",
-    "Project plans and delivery roadmaps",
-    "Task and workflow management processes",
-    "Project dashboards and status reports",
-    "SharePoint document libraries",
-    "Knowledge-base and documentation structure",
-    "Risk and issue management framework",
-    "Workflow automation and approval processes",
-    "User guidance and onboarding documentation",
-    "Ongoing platform administration support",
-  ],
+    deliverables: [
+      "Configured project management platform",
+      "Microsoft 365 digital workplace setup",
+      "Project plans and delivery roadmaps",
+      "Task and workflow management processes",
+      "Project dashboards and status reports",
+      "SharePoint document libraries",
+      "Knowledge-base and documentation structure",
+      "Risk and issue management framework",
+      "Workflow automation and approval processes",
+      "User guidance and onboarding documentation",
+      "Ongoing platform administration support",
+    ],
 
-  technologies: [
-    "Jira",
-    "Jira Service Management",
-    "Microsoft 365",
-    "Microsoft Teams",
-    "SharePoint",
-    "Microsoft Planner",
-    "Microsoft Project",
-    "Power Automate",
-    "Confluence",
-    "Agile",
-    "Scrum",
-    "Kanban",
-  ],
+    technologies: [
+      "Jira",
+      "Jira Service Management",
+      "Microsoft 365",
+      "Microsoft Teams",
+      "SharePoint",
+      "Microsoft Planner",
+      "Microsoft Project",
+      "Power Automate",
+      "Confluence",
+      "Agile",
+      "Scrum",
+      "Kanban",
+    ],
 
-  faq: [
-    {
-      question:
-        "Can you set up and manage Jira for our organisation?",
-      answer:
-        "Yes. We can configure Jira projects, issue types, workflows, permissions, boards, dashboards, automation rules, reports, and user access based on your organisation's requirements.",
-    },
-    {
-      question:
-        "Do you provide Microsoft 365 and SharePoint support?",
-      answer:
-        "Yes. We can help configure Microsoft 365, Teams, SharePoint sites, document libraries, permissions, collaboration spaces, and business workflows.",
-    },
-    {
-      question:
-        "Can you manage complete projects as well as the management tools?",
-      answer:
-        "Yes. In addition to platform setup and administration, we can support project planning, scheduling, task coordination, risk management, progress reporting, stakeholder communication, and delivery governance.",
-    },
-    {
-      question:
-        "Can you improve an existing project management process?",
-      answer:
-        "Yes. We can review your current tools and processes, identify gaps, simplify workflows, improve reporting, introduce automation, and establish more consistent project management practices.",
-    },
-    {
-      question:
-        "Do you provide training and ongoing support?",
-      answer:
-        "Yes. We can provide user onboarding, platform guidance, process documentation, administration support, workflow improvements, and ongoing maintenance.",
-    },
-  ],
+    faq: [
+      {
+        question: "Can you set up and manage Jira for our organisation?",
+        answer:
+          "Yes. We can configure Jira projects, issue types, workflows, permissions, boards, dashboards, automation rules, reports, and user access based on your organisation's requirements.",
+      },
+      {
+        question: "Do you provide Microsoft 365 and SharePoint support?",
+        answer:
+          "Yes. We can help configure Microsoft 365, Teams, SharePoint sites, document libraries, permissions, collaboration spaces, and business workflows.",
+      },
+      {
+        question:
+          "Can you manage complete projects as well as the management tools?",
+        answer:
+          "Yes. In addition to platform setup and administration, we can support project planning, scheduling, task coordination, risk management, progress reporting, stakeholder communication, and delivery governance.",
+      },
+      {
+        question: "Can you improve an existing project management process?",
+        answer:
+          "Yes. We can review your current tools and processes, identify gaps, simplify workflows, improve reporting, introduce automation, and establish more consistent project management practices.",
+      },
+      {
+        question: "Do you provide training and ongoing support?",
+        answer:
+          "Yes. We can provide user onboarding, platform guidance, process documentation, administration support, workflow improvements, and ongoing maintenance.",
+      },
+    ],
 
-  seo: {
-    title: "Digital Workplace and Project Management Services UK",
-    description:
-      "Professional Jira, Microsoft 365, Teams, SharePoint, workflow automation, digital workplace, and project management services for businesses across the UK.",
+    seo: {
+      title: "Digital Workplace and Project Management Services UK",
+      description:
+        "Professional Jira, Microsoft 365, Teams, SharePoint, workflow automation, digital workplace, and project management services for businesses across the UK.",
+    },
   },
-},
+    {
+    slug: "ai-solutions",
+    title: "AI Solutions",
+    category: "digital",
+    eyebrow: "Artificial Intelligence & Automation",
+    shortDescription:
+      "We deliver practical AI solutions that automate business processes, improve decision-making, and create intelligent digital experiences tailored to your organisation.",
+    description: `NZ Solutions provides practical artificial intelligence solutions that help businesses automate repetitive work, improve customer experiences, analyse information, and make better operational decisions.
+
+We design and develop AI-powered applications, intelligent assistants, chatbots, recommendation systems, document-processing workflows, predictive solutions, and custom automation based on your business requirements. Our approach focuses on solving clear business problems rather than introducing technology without a measurable purpose.
+
+We can integrate AI capabilities into existing websites, mobile applications, internal systems, customer portals, and business workflows. Our team also supports data preparation, model integration, API development, testing, deployment, monitoring, and continuous improvement to ensure the solution remains reliable, secure, and useful.`,
+    image: AISolutions,
+    features: [
+      "AI strategy and solution planning",
+      "Custom AI-powered applications",
+      "Chatbots and virtual assistants",
+      "Workflow and process automation",
+      "Document and data processing",
+      "Recommendation systems",
+      "Predictive analytics",
+      "Natural language processing",
+      "AI API integration",
+      "Existing system integration",
+      "AI testing and optimisation",
+      "Ongoing monitoring and support",
+    ],
+    deliverables: [
+      "AI solution architecture",
+      "Configured or custom AI application",
+      "Automated business workflow",
+      "API and system integrations",
+      "Testing and validation documentation",
+      "Deployment and monitoring support",
+      "User guidance and technical documentation",
+    ],
+    technologies: [
+      "OpenAI",
+      "Azure AI",
+      "Python",
+      "Machine Learning",
+      "Natural Language Processing",
+      "Vector Databases",
+      "REST APIs",
+      "Automation",
+      "Data Analytics",
+    ],
+    faq: [
+      {
+        question: "Can you add AI features to our existing website or app?",
+        answer:
+          "Yes. We can integrate AI assistants, search, recommendations, automation, document processing, and other intelligent features into existing websites, mobile apps, and business systems.",
+      },
+      {
+        question: "Do you build custom AI solutions for specific business needs?",
+        answer:
+          "Yes. We can design a solution around your workflows, data, users, security requirements, and operational goals instead of relying only on a generic off-the-shelf tool.",
+      },
+      {
+        question: "Can you automate repetitive business processes?",
+        answer:
+          "Yes. We can identify suitable processes and build AI-assisted or rule-based automation to reduce manual work, improve consistency, and speed up delivery.",
+      },
+    ],
+    seo: {
+      title: "AI Solutions and Automation Services UK",
+      description:
+        "Custom AI solutions, intelligent automation, chatbots, predictive analytics, document processing, API integration, and ongoing AI support for businesses.",
+    },
+  },
+  {
+    slug: "cloud-services",
+    title: "Cloud Services",
+    category: "digital",
+    eyebrow: "Cloud Infrastructure & Operations",
+    shortDescription:
+      "We help businesses design, migrate, secure, and manage reliable cloud environments that support scalable applications, data, collaboration, and day-to-day operations.",
+    description: `NZ Solutions provides cloud services that help businesses modernise infrastructure, improve reliability, support remote operations, and scale digital products more efficiently.
+
+We assist with cloud architecture, application deployment, server and database setup, cloud migrations, backup and disaster recovery, monitoring, security configuration, performance optimisation, and ongoing infrastructure management. Our solutions can support websites, mobile applications, internal systems, APIs, business platforms, and data workloads.
+
+Whether you are moving from on-premise infrastructure, improving an existing cloud environment, or preparing a new product for launch, we provide structured planning and implementation support. Our focus is on security, availability, cost control, maintainability, and clear technical documentation.`,
+    image: CloudServices,
+    features: [
+      "Cloud strategy and architecture",
+      "Cloud migration planning",
+      "Application and API deployment",
+      "Server and database configuration",
+      "Backup and disaster recovery",
+      "Cloud security configuration",
+      "Infrastructure monitoring",
+      "Performance optimisation",
+      "Cost optimisation",
+      "DevOps and CI/CD support",
+      "Containerised deployments",
+      "Ongoing cloud management",
+    ],
+    deliverables: [
+      "Cloud architecture and migration plan",
+      "Configured cloud infrastructure",
+      "Application deployment environment",
+      "Backup and recovery configuration",
+      "Monitoring and alerting setup",
+      "Security and access configuration",
+      "Technical documentation and handover",
+    ],
+    technologies: [
+      "Microsoft Azure",
+      "Amazon Web Services",
+      "Google Cloud",
+      "Docker",
+      "Kubernetes",
+      "CI/CD",
+      "Cloud Databases",
+      "Linux",
+      "Monitoring",
+      "Infrastructure as Code",
+    ],
+    faq: [
+      {
+        question: "Can you migrate our existing systems to the cloud?",
+        answer:
+          "Yes. We can assess your existing applications and infrastructure, create a migration plan, move workloads, validate performance, and support the transition with minimal disruption.",
+      },
+      {
+        question: "Do you provide ongoing cloud monitoring and support?",
+        answer:
+          "Yes. We can support monitoring, alerting, backups, security updates, performance improvements, cost reviews, and general cloud administration.",
+      },
+      {
+        question: "Can you deploy our web or mobile application backend?",
+        answer:
+          "Yes. We can configure and deploy websites, APIs, databases, authentication services, storage, and supporting infrastructure for web and mobile products.",
+      },
+    ],
+    seo: {
+      title: "Cloud Services and Cloud Migration UK",
+      description:
+        "Cloud architecture, migration, deployment, security, backup, monitoring, DevOps, optimisation, and managed cloud support for businesses.",
+    },
+  },
+  {
+    slug: "it-consulting",
+    title: "IT Consulting",
+    category: "digital",
+    eyebrow: "Technology Strategy & Advisory",
+    shortDescription:
+      "We provide practical IT consulting to help organisations choose the right technology, improve existing systems, reduce risk, and plan successful digital initiatives.",
+    description: `NZ Solutions provides IT consulting services to help businesses make informed technology decisions, improve existing systems, and deliver digital change with greater clarity and control.
+
+We assess business requirements, current platforms, workflows, infrastructure, security considerations, technical risks, and future growth plans. Based on this assessment, we provide practical recommendations, solution options, implementation roadmaps, and delivery support aligned with your priorities and budget.
+
+Our consultants can support digital transformation, software selection, system architecture, cloud adoption, process improvement, vendor evaluation, technical audits, project planning, and technology governance. We work collaboratively with business and technical stakeholders to turn complex requirements into clear, actionable plans.`,
+    image: ITConsulting,
+    features: [
+      "IT strategy and roadmap development",
+      "Digital transformation consulting",
+      "Technology and system assessment",
+      "Solution architecture",
+      "Software and platform selection",
+      "Technical audits",
+      "Cloud adoption planning",
+      "Business process improvement",
+      "Vendor and solution evaluation",
+      "Project planning and governance",
+      "Risk and dependency assessment",
+      "Implementation advisory and support",
+    ],
+    deliverables: [
+      "Current-state technology assessment",
+      "IT strategy and transformation roadmap",
+      "Solution architecture recommendations",
+      "Technology selection report",
+      "Risk and dependency register",
+      "Implementation plan",
+      "Governance and technical documentation",
+    ],
+    technologies: [
+      "Enterprise Architecture",
+      "Cloud Platforms",
+      "Microsoft 365",
+      "Jira",
+      "Agile",
+      "DevOps",
+      "Cybersecurity",
+      "Business Analysis",
+      "Process Automation",
+      "Data and Analytics",
+    ],
+    faq: [
+      {
+        question: "Can you review our current IT systems and processes?",
+        answer:
+          "Yes. We can assess your applications, infrastructure, workflows, integrations, risks, and operational challenges, then provide prioritised recommendations.",
+      },
+      {
+        question: "Can you help us choose the right software or platform?",
+        answer:
+          "Yes. We can document requirements, compare suitable options, assess technical and operational fit, and support selection and implementation planning.",
+      },
+      {
+        question: "Do you support digital transformation projects?",
+        answer:
+          "Yes. We can help define the strategy, roadmap, architecture, governance, delivery plan, and technology decisions required for a successful transformation programme.",
+      },
+    ],
+    seo: {
+      title: "IT Consulting and Technology Advisory UK",
+      description:
+        "IT strategy, digital transformation, solution architecture, technical audits, software selection, cloud planning, and technology advisory services.",
+    },
+  },
+  {
+    slug: "digital-marketing",
+    title: "Digital Marketing",
+    category: "digital",
+    eyebrow: "Digital Growth & Marketing",
+    shortDescription:
+      "We help businesses increase online visibility, reach the right audience, and generate measurable growth through coordinated digital marketing campaigns and content.",
+    description: `NZ Solutions provides digital marketing services that help businesses improve visibility, attract relevant audiences, and convert online interest into measurable enquiries, leads, and sales.
+
+We support search engine optimisation, paid advertising, social media marketing, content planning, email campaigns, website analytics, conversion optimisation, and campaign reporting. Each strategy is shaped around your business goals, target audience, market position, and available budget.
+
+Our approach connects marketing activity with your website, landing pages, content, tracking, and customer journey. We focus on clear objectives, consistent messaging, accurate measurement, and continuous improvement so that marketing decisions are based on useful performance data.`,
+    image: DigitalMarketing,
+    features: [
+      "Digital marketing strategy",
+      "Search engine optimisation",
+      "Pay-per-click advertising",
+      "Social media marketing",
+      "Content planning and creation",
+      "Email marketing campaigns",
+      "Landing page optimisation",
+      "Conversion rate optimisation",
+      "Analytics and tracking setup",
+      "Audience and keyword research",
+      "Campaign management",
+      "Performance reporting and optimisation",
+    ],
+    deliverables: [
+      "Digital marketing strategy",
+      "Campaign and content plan",
+      "SEO recommendations and implementation",
+      "Paid advertising campaigns",
+      "Social media campaign setup",
+      "Analytics and conversion tracking",
+      "Performance reports and improvement plan",
+    ],
+    technologies: [
+      "Google Ads",
+      "Google Analytics",
+      "Google Search Console",
+      "Meta Ads",
+      "LinkedIn Ads",
+      "SEO",
+      "Email Marketing",
+      "Content Marketing",
+      "Conversion Tracking",
+      "Marketing Automation",
+    ],
+    faq: [
+      {
+        question: "Do you provide SEO and paid advertising services?",
+        answer:
+          "Yes. We can support technical and on-page SEO, keyword research, Google Ads, social advertising, tracking, reporting, and ongoing campaign optimisation.",
+      },
+      {
+        question: "Can you manage social media marketing?",
+        answer:
+          "Yes. We can help with channel planning, content calendars, campaign setup, audience targeting, paid promotion, and performance reporting.",
+      },
+      {
+        question: "How do you measure marketing performance?",
+        answer:
+          "We configure suitable analytics and conversion tracking, then report against agreed goals such as traffic, enquiries, leads, sales, cost per result, and conversion rate.",
+      },
+    ],
+    seo: {
+      title: "Digital Marketing Services UK",
+      description:
+        "SEO, paid advertising, social media marketing, content, email campaigns, analytics, conversion optimisation, and digital growth services.",
+    },
+  }
 ];
 
 // src/constants/service-categories.ts
 
 export const serviceCategories = [
   {
-    key: 'telecom',
-    label: 'Telecom Services',
-    description: 'Surveying, cabling, civils, networks and data-centre services.',
-    href: '/services?category=telecom'
+    key: "telecom",
+    label: "Telecom Services",
+    description:
+      "Surveying, cabling, civils, networks and data-centre services.",
+    href: "/services?category=telecom",
   },
   {
-    key: 'digital',
-    label: 'Digital Services',
-    description: 'Web, mobile, workplace and project-management solutions.',
-    href: '/services?category=digital'
-  }
+    key: "digital",
+    label: "Digital Services",
+    description: "Web, mobile, workplace and project-management solutions.",
+    href: "/services?category=digital",
+  },
 ] as const;
 
 // export type ServiceCategory = (typeof serviceCategories)[number]['key'];
