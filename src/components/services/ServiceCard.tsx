@@ -227,7 +227,7 @@ export function ServiceCard({service}: {service: Service}) {
               {service.title}
             </h3>
 
-            <p className="mt-4 line-clamp-2 max-w-sm text-sm leading-6 text-white/80">
+            <p className="mt-4 line-clamp-1 max-w-sm text-sm leading-6 text-white/80">
               {service.shortDescription}
             </p>
 

@@ -499,110 +499,110 @@ We can build mobile apps using cross-platform technologies where a single codeba
         "iOS and Android mobile app development services including cross-platform apps, UI/UX design, API integration, testing, deployment, and maintenance support.",
     },
   },
-  {
-    slug: "digital-workplace-project-management",
-    title: "Digital Workplace & Project Management",
-    category: "digital",
-    eyebrow: "Business Technology & Management",
-    shortDescription:
-      "We help businesses manage projects, teams, workflows, documentation, and digital workplace platforms using solutions such as Jira, Microsoft 365, Teams, SharePoint, and other modern management tools.",
+//   {
+//     slug: "digital-workplace-project-management",
+//     title: "Digital Workplace & Project Management",
+//     category: "digital",
+//     eyebrow: "Business Technology & Management",
+//     shortDescription:
+//       "We help businesses manage projects, teams, workflows, documentation, and digital workplace platforms using solutions such as Jira, Microsoft 365, Teams, SharePoint, and other modern management tools.",
 
-    description: `NZ Solutions provides digital workplace, project management, and business process management services to help organisations improve collaboration, visibility, productivity, and operational control.
+//     description: `NZ Solutions provides digital workplace, project management, and business process management services to help organisations improve collaboration, visibility, productivity, and operational control.
 
-We support businesses with the setup, configuration, administration, and optimisation of project management and collaboration platforms such as Jira, Microsoft 365, Microsoft Teams, SharePoint, Microsoft Planner, Microsoft Project, and Confluence.
+// We support businesses with the setup, configuration, administration, and optimisation of project management and collaboration platforms such as Jira, Microsoft 365, Microsoft Teams, SharePoint, Microsoft Planner, Microsoft Project, and Confluence.
 
-Our team can help establish structured project workflows, task management processes, approval systems, reporting dashboards, document management environments, team collaboration spaces, and service management processes tailored to your organisation.
+// Our team can help establish structured project workflows, task management processes, approval systems, reporting dashboards, document management environments, team collaboration spaces, and service management processes tailored to your organisation.
 
-Whether you need to introduce a new project management platform, improve an existing workspace, migrate business documents, automate repetitive processes, or establish consistent project governance, we can provide practical support from initial planning through implementation, user onboarding, and ongoing administration.
+// Whether you need to introduce a new project management platform, improve an existing workspace, migrate business documents, automate repetitive processes, or establish consistent project governance, we can provide practical support from initial planning through implementation, user onboarding, and ongoing administration.
 
-We also support project and programme delivery by helping teams define project plans, milestones, responsibilities, risks, dependencies, reporting procedures, and communication processes. Our goal is to provide businesses with clear systems that make work easier to manage, monitor, and deliver.`,
+// We also support project and programme delivery by helping teams define project plans, milestones, responsibilities, risks, dependencies, reporting procedures, and communication processes. Our goal is to provide businesses with clear systems that make work easier to manage, monitor, and deliver.`,
 
-    image: Management,
+//     image: Management,
 
-    features: [
-      "Jira setup, configuration, and administration",
-      "Microsoft 365 setup and management",
-      "Microsoft Teams workspace configuration",
-      "SharePoint document management",
-      "Microsoft Planner and task management",
-      "Microsoft Project planning support",
-      "Confluence knowledge-base setup",
-      "Project and programme management",
-      "Agile and Scrum workflow configuration",
-      "Service desk and ticket management",
-      "Business process mapping",
-      "Workflow and approval automation",
-      "Project dashboards and reporting",
-      "Document and knowledge management",
-      "Risk, issue, and dependency tracking",
-      "User onboarding and platform training",
-      "Ongoing administration and support",
-    ],
+//     features: [
+//       "Jira setup, configuration, and administration",
+//       "Microsoft 365 setup and management",
+//       "Microsoft Teams workspace configuration",
+//       "SharePoint document management",
+//       "Microsoft Planner and task management",
+//       "Microsoft Project planning support",
+//       "Confluence knowledge-base setup",
+//       "Project and programme management",
+//       "Agile and Scrum workflow configuration",
+//       "Service desk and ticket management",
+//       "Business process mapping",
+//       "Workflow and approval automation",
+//       "Project dashboards and reporting",
+//       "Document and knowledge management",
+//       "Risk, issue, and dependency tracking",
+//       "User onboarding and platform training",
+//       "Ongoing administration and support",
+//     ],
 
-    deliverables: [
-      "Configured project management platform",
-      "Microsoft 365 digital workplace setup",
-      "Project plans and delivery roadmaps",
-      "Task and workflow management processes",
-      "Project dashboards and status reports",
-      "SharePoint document libraries",
-      "Knowledge-base and documentation structure",
-      "Risk and issue management framework",
-      "Workflow automation and approval processes",
-      "User guidance and onboarding documentation",
-      "Ongoing platform administration support",
-    ],
+//     deliverables: [
+//       "Configured project management platform",
+//       "Microsoft 365 digital workplace setup",
+//       "Project plans and delivery roadmaps",
+//       "Task and workflow management processes",
+//       "Project dashboards and status reports",
+//       "SharePoint document libraries",
+//       "Knowledge-base and documentation structure",
+//       "Risk and issue management framework",
+//       "Workflow automation and approval processes",
+//       "User guidance and onboarding documentation",
+//       "Ongoing platform administration support",
+//     ],
 
-    technologies: [
-      "Jira",
-      "Jira Service Management",
-      "Microsoft 365",
-      "Microsoft Teams",
-      "SharePoint",
-      "Microsoft Planner",
-      "Microsoft Project",
-      "Power Automate",
-      "Confluence",
-      "Agile",
-      "Scrum",
-      "Kanban",
-    ],
+//     technologies: [
+//       "Jira",
+//       "Jira Service Management",
+//       "Microsoft 365",
+//       "Microsoft Teams",
+//       "SharePoint",
+//       "Microsoft Planner",
+//       "Microsoft Project",
+//       "Power Automate",
+//       "Confluence",
+//       "Agile",
+//       "Scrum",
+//       "Kanban",
+//     ],
 
-    faq: [
-      {
-        question: "Can you set up and manage Jira for our organisation?",
-        answer:
-          "Yes. We can configure Jira projects, issue types, workflows, permissions, boards, dashboards, automation rules, reports, and user access based on your organisation's requirements.",
-      },
-      {
-        question: "Do you provide Microsoft 365 and SharePoint support?",
-        answer:
-          "Yes. We can help configure Microsoft 365, Teams, SharePoint sites, document libraries, permissions, collaboration spaces, and business workflows.",
-      },
-      {
-        question:
-          "Can you manage complete projects as well as the management tools?",
-        answer:
-          "Yes. In addition to platform setup and administration, we can support project planning, scheduling, task coordination, risk management, progress reporting, stakeholder communication, and delivery governance.",
-      },
-      {
-        question: "Can you improve an existing project management process?",
-        answer:
-          "Yes. We can review your current tools and processes, identify gaps, simplify workflows, improve reporting, introduce automation, and establish more consistent project management practices.",
-      },
-      {
-        question: "Do you provide training and ongoing support?",
-        answer:
-          "Yes. We can provide user onboarding, platform guidance, process documentation, administration support, workflow improvements, and ongoing maintenance.",
-      },
-    ],
+//     faq: [
+//       {
+//         question: "Can you set up and manage Jira for our organisation?",
+//         answer:
+//           "Yes. We can configure Jira projects, issue types, workflows, permissions, boards, dashboards, automation rules, reports, and user access based on your organisation's requirements.",
+//       },
+//       {
+//         question: "Do you provide Microsoft 365 and SharePoint support?",
+//         answer:
+//           "Yes. We can help configure Microsoft 365, Teams, SharePoint sites, document libraries, permissions, collaboration spaces, and business workflows.",
+//       },
+//       {
+//         question:
+//           "Can you manage complete projects as well as the management tools?",
+//         answer:
+//           "Yes. In addition to platform setup and administration, we can support project planning, scheduling, task coordination, risk management, progress reporting, stakeholder communication, and delivery governance.",
+//       },
+//       {
+//         question: "Can you improve an existing project management process?",
+//         answer:
+//           "Yes. We can review your current tools and processes, identify gaps, simplify workflows, improve reporting, introduce automation, and establish more consistent project management practices.",
+//       },
+//       {
+//         question: "Do you provide training and ongoing support?",
+//         answer:
+//           "Yes. We can provide user onboarding, platform guidance, process documentation, administration support, workflow improvements, and ongoing maintenance.",
+//       },
+//     ],
 
-    seo: {
-      title: "Digital Workplace and Project Management Services UK",
-      description:
-        "Professional Jira, Microsoft 365, Teams, SharePoint, workflow automation, digital workplace, and project management services for businesses across the UK.",
-    },
-  },
+//     seo: {
+//       title: "Digital Workplace and Project Management Services UK",
+//       description:
+//         "Professional Jira, Microsoft 365, Teams, SharePoint, workflow automation, digital workplace, and project management services for businesses across the UK.",
+//     },
+//   },
     {
     slug: "ai-solutions",
     title: "AI Solutions",
