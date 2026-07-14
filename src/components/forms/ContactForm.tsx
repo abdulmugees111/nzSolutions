@@ -3,7 +3,7 @@
 import {useState} from 'react';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {useForm} from 'react-hook-form';
-import {CheckCircle2, Calendar} from 'lucide-react';
+import {CheckCircle2, Calendar, User, Mail, Phone, Building2, Briefcase, Wallet, MessageSquare} from 'lucide-react';
 import {contactFormSchema, type ContactFormValues} from '@/lib/validations';
 import {Button} from '@/components/ui/button';
 import {Input} from '@/components/ui/input';
@@ -63,12 +63,12 @@ export function ContactForm() {
   return (
     <div className="overflow-hidden rounded-3xl border bg-card shadow-sm">
       {/* Header strip */}
-      <div className="bg-primary px-6 py-6 sm:px-8">
-        <h2 className="text-2xl font-bold text-primary-foreground">Let&apos;s Talk</h2>
-        <ul className="mt-3 flex flex-col gap-1.5 sm:flex-row sm:gap-5">
+      <div className="bg-primary px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
+        <h2 className="text-xl font-bold text-primary-foreground sm:text-2xl">Let&apos;s Talk</h2>
+        <ul className="mt-2.5 flex flex-wrap gap-x-5 gap-y-1.5">
           {PERKS.map((perk) => (
             <li key={perk} className="flex items-center gap-1.5 text-sm text-primary-foreground/80">
-              <CheckCircle2 size={15} className="shrink-0 text-primary-foreground" />
+              <CheckCircle2 size={14} className="shrink-0 text-primary-foreground" />
               {perk}
             </li>
           ))}
@@ -76,70 +76,84 @@ export function ContactForm() {
       </div>
 
       {/* Form body */}
-      <form onSubmit={handleSubmit(onSubmit)} className="px-6 py-6 sm:px-8">
-        <div className="grid gap-4 sm:grid-cols-2">
+      <form onSubmit={handleSubmit(onSubmit)} className="px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
+        <div className="grid gap-4 md:grid-cols-2">
           {/* Name */}
           <div>
-            <label className="text-sm font-medium" htmlFor="name">Name <span className="text-red-500">*</span></label>
-            <Input id="name" className="mt-1.5" placeholder="John Smith" {...register('name')} />
+            <div className="relative">
+              <User size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+              <Input id="name" className="pl-9" placeholder="Full Name *" {...register('name')} />
+            </div>
             {errors.name && <p className="mt-1 text-xs text-red-600">{errors.name.message}</p>}
           </div>
 
           {/* Email */}
           <div>
-            <label className="text-sm font-medium" htmlFor="email">Email <span className="text-red-500">*</span></label>
-            <Input id="email" type="email" className="mt-1.5" placeholder="you@company.com" {...register('email')} />
+            <div className="relative">
+              <Mail size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+              <Input id="email" type="email" className="pl-9" placeholder="Email Address *" {...register('email')} />
+            </div>
             {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email.message}</p>}
           </div>
 
           {/* Phone */}
           <div>
-            <label className="text-sm font-medium" htmlFor="phone">Phone</label>
-            <Input id="phone" type="tel" className="mt-1.5" placeholder="+44 7700 000000" {...register('phone')} />
+            <div className="relative">
+              <Phone size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+              <Input id="phone" type="tel" className="pl-9" placeholder="Phone Number" {...register('phone')} />
+            </div>
           </div>
 
           {/* Company */}
           <div>
-            <label className="text-sm font-medium" htmlFor="company">Company</label>
-            <Input id="company" className="mt-1.5" placeholder="Your company name" {...register('company')} />
+            <div className="relative">
+              <Building2 size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+              <Input id="company" className="pl-9" placeholder="Company Name" {...register('company')} />
+            </div>
           </div>
 
           {/* Service Needed */}
           <div>
-            <label className="text-sm font-medium" htmlFor="service">Service Needed <span className="text-red-500">*</span></label>
-            <select
-              id="service"
-              className="mt-1.5 h-11 w-full rounded-lg border bg-background px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              {...register('service')}
-            >
-              <option value="">Select a service…</option>
-              {SERVICE_OPTIONS.map((s) => (
-                <option key={s} value={s}>{s}</option>
-              ))}
-            </select>
+            <div className="relative">
+              <Briefcase size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+              <select
+                id="service"
+                className="h-11 w-full rounded-lg border bg-background pl-9 pr-3 text-sm text-muted-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                {...register('service')}
+              >
+                <option value="">Service Needed *</option>
+                {SERVICE_OPTIONS.map((s) => (
+                  <option key={s} value={s}>{s}</option>
+                ))}
+              </select>
+            </div>
             {errors.service && <p className="mt-1 text-xs text-red-600">{errors.service.message}</p>}
           </div>
 
           {/* Project Budget */}
           <div>
-            <label className="text-sm font-medium" htmlFor="budget">Project Budget</label>
-            <select
-              id="budget"
-              className="mt-1.5 h-11 w-full rounded-lg border bg-background px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              {...register('budget')}
-            >
-              <option value="">Select a budget…</option>
-              {BUDGET_OPTIONS.map((b) => (
-                <option key={b} value={b}>{b}</option>
-              ))}
-            </select>
+            <div className="relative">
+              <Wallet size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+              <select
+                id="budget"
+                className="h-11 w-full rounded-lg border bg-background pl-9 pr-3 text-sm text-muted-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                {...register('budget')}
+              >
+                <option value="">Project Budget</option>
+                {BUDGET_OPTIONS.map((b) => (
+                  <option key={b} value={b}>{b}</option>
+                ))}
+              </select>
+            </div>
           </div>
         </div>
 
         {/* Message */}
         <div className="mt-4">
-          <label className="text-sm font-medium" htmlFor="message">Message <span className="text-red-500">*</span></label>
-          <Textarea id="message" className="mt-1.5" rows={4} placeholder="Tell us about your project…" {...register('message')} />
+          <div className="relative">
+            <MessageSquare size={15} className="pointer-events-none absolute left-3 top-3 text-muted-foreground" />
+            <Textarea id="message" className="pl-9" rows={4} placeholder="Your Message *" {...register('message')} />
+          </div>
           {errors.message && <p className="mt-1 text-xs text-red-600">{errors.message.message}</p>}
         </div>
 
@@ -152,7 +166,7 @@ export function ContactForm() {
       </form>
 
       {/* ── Book a Call divider ──────────────────────────────────── */}
-      <div className="border-t px-6 py-6 sm:px-8">
+      <div className="border-t px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
         <div className="flex items-center gap-2 mb-4">
           <Calendar size={17} className="text-primary" />
           <p className="text-sm font-semibold text-foreground">Prefer to book a call directly?</p>

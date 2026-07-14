@@ -35,9 +35,9 @@ const INFO_CARDS = [
 
 export function ContactFormMap() {
   return (
-    <section className="pt-8 sm:pt-10 pb-14 sm:pb-18 lg:pb-24">
+    <section className="py-10 sm:py-12 lg:py-16">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-[7fr_5fr] lg:items-start">
+        <div className="grid gap-8 lg:gap-12 lg:grid-cols-[7fr_5fr] lg:items-start">
 
           {/* Left — premium form */}
           <div className="transition-transform duration-300 hover:-translate-y-1">
@@ -48,7 +48,7 @@ export function ContactFormMap() {
           <div className="flex flex-col gap-6">
 
             {/* Contact info cards */}
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 xl:[&>*:last-child]:col-span-2 xl:[&>*:nth-child(3)]:col-span-2">
               {INFO_CARDS.map(({icon: Icon, label, value, href}) => {
                 const inner = (
                   <div className="flex items-start gap-4 rounded-2xl border bg-card p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
