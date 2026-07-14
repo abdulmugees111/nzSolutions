@@ -63,7 +63,7 @@ export function ContactForm() {
   return (
     <div className="overflow-hidden rounded-3xl border bg-card shadow-sm">
       {/* Header strip */}
-      <div className="bg-primary px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
+      <div className="bg-primary px-5 py-3.5 sm:px-6 sm:py-4 lg:px-8">
         <h2 className="text-xl font-bold text-primary-foreground sm:text-2xl">Let&apos;s Talk</h2>
         <ul className="mt-2.5 flex flex-wrap gap-x-5 gap-y-1.5">
           {PERKS.map((perk) => (
@@ -76,13 +76,13 @@ export function ContactForm() {
       </div>
 
       {/* Form body */}
-      <form onSubmit={handleSubmit(onSubmit)} className="px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
+      <form onSubmit={handleSubmit(onSubmit)} className="px-5 pt-4 pb-5 sm:px-6 sm:pt-4 sm:pb-6 lg:px-8 lg:pb-7">
         <div className="grid gap-4 md:grid-cols-2">
           {/* Name */}
           <div>
             <div className="relative">
-              <User size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-              <Input id="name" className="pl-9" placeholder="Full Name *" {...register('name')} />
+              <User size={15} className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-muted-foreground" />
+              <Input id="name" className="pl-8" placeholder="Full Name *" {...register('name')} />
             </div>
             {errors.name && <p className="mt-1 text-xs text-red-600">{errors.name.message}</p>}
           </div>
@@ -90,8 +90,8 @@ export function ContactForm() {
           {/* Email */}
           <div>
             <div className="relative">
-              <Mail size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-              <Input id="email" type="email" className="pl-9" placeholder="Email Address *" {...register('email')} />
+              <Mail size={15} className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-muted-foreground" />
+              <Input id="email" type="email" className="pl-8" placeholder="Email Address *" {...register('email')} />
             </div>
             {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email.message}</p>}
           </div>
@@ -99,23 +99,23 @@ export function ContactForm() {
           {/* Phone */}
           <div>
             <div className="relative">
-              <Phone size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-              <Input id="phone" type="tel" className="pl-9" placeholder="Phone Number" {...register('phone')} />
+              <Phone size={15} className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-muted-foreground" />
+              <Input id="phone" type="tel" className="pl-8" placeholder="Phone Number" {...register('phone')} />
             </div>
           </div>
 
           {/* Company */}
           <div>
             <div className="relative">
-              <Building2 size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-              <Input id="company" className="pl-9" placeholder="Company Name" {...register('company')} />
+              <Building2 size={15} className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-muted-foreground" />
+              <Input id="company" className="pl-8" placeholder="Company Name" {...register('company')} />
             </div>
           </div>
 
           {/* Service Needed */}
           <div>
             <div className="relative">
-              <Briefcase size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+              <Briefcase size={15} className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-muted-foreground" />
               <select
                 id="service"
                 className="h-11 w-full rounded-lg border bg-background pl-9 pr-3 text-sm text-muted-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring"
@@ -133,7 +133,7 @@ export function ContactForm() {
           {/* Project Budget */}
           <div>
             <div className="relative">
-              <Wallet size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+              <Wallet size={15} className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-muted-foreground" />
               <select
                 id="budget"
                 className="h-11 w-full rounded-lg border bg-background pl-9 pr-3 text-sm text-muted-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring"
@@ -151,15 +151,15 @@ export function ContactForm() {
         {/* Message */}
         <div className="mt-4">
           <div className="relative">
-            <MessageSquare size={15} className="pointer-events-none absolute left-3 top-3 text-muted-foreground" />
-            <Textarea id="message" className="pl-9" rows={4} placeholder="Your Message *" {...register('message')} />
+            <MessageSquare size={15} className="pointer-events-none absolute left-2.5 top-2.5 text-muted-foreground" />
+            <Textarea id="message" className="pl-8" rows={4} placeholder="Your Message *" {...register('message')} />
           </div>
           {errors.message && <p className="mt-1 text-xs text-red-600">{errors.message.message}</p>}
         </div>
 
         {/* Submit */}
-        <div className="mt-6">
-          <Button type="submit" disabled={isSubmitting} size="lg" className="w-full sm:w-auto">
+        <div className="mt-6 pb-4">
+          <Button type="submit" disabled={isSubmitting} size="lg" className="w-full sm:w-1/2">
             {isSubmitting ? 'Sending…' : 'Send Message'}
           </Button>
         </div>
