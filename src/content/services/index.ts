@@ -1,4 +1,4 @@
-export type ServiceCategory = 'telecom' | 'digital';
+export type ServiceCategory = 'telecom' | 'digital' | 'transportation';
 
 export type Service = {
   slug: string;
@@ -236,7 +236,8 @@ export const allServices: Service[] = [
       {question: 'Do you provide long-term maintenance?', answer: 'Yes. Maintenance can include updates, bug fixes, performance checks, content changes, and technical support.'}
     ],
     seo: {title: 'QA Testing and Maintenance UK', description: 'Responsive testing, bug fixing, performance checks, dependency updates, and post-launch support for web and mobile products.'}
-  }
+  },
+  
 ];
 
 export const telecomServices = allServices.filter((service) => service.category === 'telecom');

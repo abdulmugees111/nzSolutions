@@ -36,6 +36,12 @@ const categoryContent: Record<
     title: 'Digital Services',
     description:
       'Explore our web development, mobile application, digital workplace and project-management services.'
+  },
+  transportation: {
+    eyebrow: 'Transport & Logistics',
+    title: 'Heavy Transportation',
+    description:
+      'Explore our heavy transportation and logistics services using lorries and heavy trucks.'
   }
 };
 
@@ -53,20 +59,27 @@ export default async function ServicesPage({
 }: ServicesPageProps) {
   const t = await getTranslations('ServicesPage');
 
+  // const selectedCategory: ServiceCategory | undefined =
+  //   rawCategory === 'telecom' || rawCategory === 'digital' || rawCategory === 'transportation'
+  //     ? rawCategory
+  //     : undefined;
+
   const resolvedSearchParams = await searchParams;
 
-  const rawCategory = Array.isArray(resolvedSearchParams.category)
-    ? resolvedSearchParams.category[0]
-    : resolvedSearchParams.category;
+const rawCategory = Array.isArray(resolvedSearchParams.category)
+  ? resolvedSearchParams.category[0]
+  : resolvedSearchParams.category;
 
-  const selectedCategory: ServiceCategory | undefined =
-    rawCategory === 'telecom' || rawCategory === 'digital'
-      ? rawCategory
-      : undefined;
+const selectedCategory = serviceCategories.some(
+  (category) => category.key === rawCategory
+)
+  ? (rawCategory as ServiceCategory)
+  : undefined;
 
-  const visibleServices = selectedCategory
-    ? services.filter((service) => service.category === selectedCategory)
-    : services;
+const visibleServices = selectedCategory
+  ? services.filter((service) => service.category === selectedCategory)
+  : services;
+
 
   const headingContent = selectedCategory
     ? categoryContent[selectedCategory]

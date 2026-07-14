@@ -13,8 +13,9 @@ import AISolutions from '@/assets/images/services/aISolutions.webp';
 import CloudServices from '@/assets/images/services/cloudServices.webp';
 import ITConsulting from '@/assets/images/services/iTConsulting.webp';
 import DigitalMarketing from '@/assets/images/services/digitalMarketing.webp';
+import HeavyTransportation from '@/assets/images/services/heavy-transportation.webp';
 
-export type ServiceCategory = "telecom" | "digital";
+export type ServiceCategory = 'telecom' | 'digital' | 'transportation';
 
 export type Service = {
   slug: string;
@@ -885,25 +886,101 @@ Our approach connects marketing activity with your website, landing pages, conte
       description:
         "SEO, paid advertising, social media marketing, content, email campaigns, analytics, conversion optimisation, and digital growth services.",
     },
-  }
+  },
+  {
+  slug: 'heavy-transportation',
+  title: 'Heavy Transportation',
+  category: 'transportation',
+  eyebrow: 'Transport & Logistics',
+  shortDescription:
+    'We provide reliable heavy transportation services using lorries and heavy trucks for the safe and efficient movement of equipment, machinery, materials, and oversized loads.',
+  description: `NZ Solutions provides dependable heavy transportation and logistics services using lorries and heavy trucks. We support businesses, construction projects, telecom operations, infrastructure developments, and industrial sites with the safe and efficient movement of equipment, machinery, materials, and heavy loads.
+
+Our transport services can support scheduled deliveries, construction materials, telecom equipment, industrial machinery, site-to-site transfers, and other project logistics requirements. We focus on careful planning, safe loading, secure transportation, timely delivery, and clear communication throughout every journey.
+
+Whether clients require a one-off delivery or ongoing transportation support, our team can provide flexible solutions based on load size, destination, access requirements, and project schedules.`,
+  image: HeavyTransportation,
+  features: [
+    'Heavy truck transportation',
+    'Lorry transportation services',
+    'Machinery and equipment transport',
+    'Construction material delivery',
+    'Telecom equipment transportation',
+    'Industrial load transportation',
+    'Site-to-site transfers',
+    'Scheduled and one-off deliveries',
+    'Project logistics support',
+    'Safe loading and unloading coordination',
+  ],
+  deliverables: [
+    'Transportation planning',
+    'Suitable vehicle allocation',
+    'Safe load movement',
+    'Delivery coordination',
+    'Site-to-site transportation',
+    'Delivery confirmation and documentation',
+  ],
+  technologies: [
+    'Heavy Trucks',
+    'Lorries',
+    'Load-Securing Equipment',
+    'Transport Planning',
+    'Project Logistics',
+  ],
+  faq: [
+    {
+      question: 'What types of loads can you transport?',
+      answer:
+        'We can support the transportation of machinery, equipment, construction materials, telecom infrastructure, industrial items, and other heavy loads based on vehicle capacity and project requirements.',
+    },
+    {
+      question: 'Do you provide both one-off and ongoing transportation?',
+      answer:
+        'Yes. We can support individual deliveries as well as regular transportation requirements for ongoing projects.',
+    },
+    {
+      question: 'Can you transport equipment between project sites?',
+      answer:
+        'Yes. We provide site-to-site transportation for equipment, machinery, materials, and project-related assets.',
+    },
+  ],
+  seo: {
+    title: 'Heavy Transportation Services UK',
+    description:
+      'Reliable heavy transportation using lorries and heavy trucks for machinery, equipment, materials, industrial loads, and project logistics.',
+  },
+},
 ];
 
 // src/constants/service-categories.ts
 
-export const serviceCategories = [
+export const serviceCategories: {
+  key: ServiceCategory;
+  label: string;
+  description: string;
+  href: string;
+}[] = [
   {
-    key: "telecom",
-    label: "Telecom Services",
+    key: 'telecom',
+    label: 'Telecom Services',
     description:
-      "Surveying, cabling, civils, networks and data-centre services.",
-    href: "/services?category=telecom",
+      'Surveying, cabling, civils, networks and data-centre services.',
+    href: '/services?category=telecom',
   },
   {
-    key: "digital",
-    label: "Digital Services",
-    description: "Web, mobile, workplace and project-management solutions.",
-    href: "/services?category=digital",
+    key: 'digital',
+    label: 'Digital Services',
+    description:
+      'Web, mobile, workplace and project-management solutions.',
+    href: '/services?category=digital',
   },
-] as const;
+  {
+    key: 'transportation',
+    label: 'Transport & Logistics',
+    description:
+      'Heavy transportation and logistics services.',
+    href: '/services?category=transportation',
+  },
+];
 
 // export type ServiceCategory = (typeof serviceCategories)[number]['key'];

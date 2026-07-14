@@ -6,11 +6,16 @@ import {cn} from '@/lib/utils';
 import type {Service} from '@/constants/services';
 
 export function ServiceCard({service}: {service: Service}) {
-  const isDigital = service.category === 'digital';
+const isDigital = service.category === 'digital';
 
-  const categoryLabel = isDigital
-    ? 'Digital Engineering'
-    : 'Telecom Infrastructure';
+const categoryLabels: Record<Service['category'], string> = {
+  telecom: 'Telecom Infrastructure',
+  digital: 'Digital Engineering',
+  transportation: 'Transport & Logistics'
+};
+
+const categoryLabel = categoryLabels[service.category];
+
 
   return (
     <article className="group relative h-full p-3 sm:p-4">

@@ -7,18 +7,24 @@ import {
   Menu,
   MonitorSmartphone,
   RadioTower,
+  Truck,
   X
 } from 'lucide-react';
 import {useTranslations} from 'next-intl';
 import {useAtom} from 'jotai';
+import type {LucideIcon} from 'lucide-react';
 
 import {navigation} from '@/constants/navigation';
-import {serviceCategories} from '@/constants/services';
 import {siteConfig} from '@/constants/site';
 import {Link, usePathname} from '@/i18n/navigation';
 import {mobileMenuOpenAtom} from '@/store';
 import {Button} from '@/components/ui/button';
 import {LanguageSwitcher} from './LanguageSwitcher';
+
+import {
+  serviceCategories,
+  type ServiceCategory
+} from '@/constants/services';
 
 export function Header() {
   const t = useTranslations('Navigation');
@@ -60,10 +66,11 @@ export function Header() {
     setOpen(false);
   }, [pathname, setOpen]);
 
-  const categoryIcon = {
-    telecom: RadioTower,
-    digital: MonitorSmartphone
-  };
+const categoryIcon: Record<ServiceCategory, LucideIcon> = {
+  telecom: RadioTower,
+  digital: MonitorSmartphone,
+  transportation: Truck
+};
 
   return (
     <header className="sticky top-0 z-50 border-b bg-background/90 backdrop-blur">
@@ -156,45 +163,33 @@ export function Header() {
                       </div>
 
                       <div className="space-y-1">
-                        {serviceCategories.map((category) => {
-                          const Icon = categoryIcon[category.key];
+                   {serviceCategories.map((category) => {
+  const Icon = categoryIcon[category.key];
 
-                          return (
-                            <Link
-                              key={category.key}
-                              href={category.href}
-                              onClick={closeDesktopServices}
-                              className="
-                                group/category flex items-start gap-3
-                                rounded-xl px-3 py-3 transition-colors
-                                hover:bg-primary/5
-                              "
-                            >
-                              <span
-                                className="
-                                  mt-0.5 flex size-10 shrink-0
-                                  items-center justify-center rounded-xl
-                                  bg-primary/10 text-primary
-                                  transition-colors
-                                  group-hover/category:bg-primary
-                                  group-hover/category:text-primary-foreground
-                                "
-                              >
-                                <Icon size={19} />
-                              </span>
+  return (
+    <Link
+      key={category.key}
+      href={category.href}
+      className="
+        flex min-h-11 items-center gap-3
+        rounded-lg px-3 py-2.5
+        text-sm font-semibold
+        text-muted-foreground
+        transition-colors
+        hover:bg-muted
+        hover:text-foreground
+      "
+      onClick={closeMobileMenu}
+    >
+      <Icon
+        size={18}
+        className="shrink-0 text-primary"
+      />
 
-                              <span>
-                                <span className="block text-sm font-semibold text-foreground">
-                                  {category.label}
-                                </span>
-
-                                <span className="mt-1 block text-xs leading-5 text-muted-foreground">
-                                  {category.description}
-                                </span>
-                              </span>
-                            </Link>
-                          );
-                        })}
+      <span>{category.label}</span>
+    </Link>
+  );
+})}
                       </div>
 
                       <div className="mt-2 border-t px-3 pb-1 pt-3">
@@ -429,34 +424,45 @@ export function Header() {
               {mobileServicesOpen ? (
                 <div className="ml-3 mt-2 border-l border-border pl-3">
                   <div className="space-y-1">
-                    {serviceCategories.map((category) => {
-                      const Icon =
-                        categoryIcon[category.key];
+                   {serviceCategories.map((category) => {
+  const Icon = categoryIcon[category.key];
 
-                      return (
-                        <Link
-                          key={category.key}
-                          href={category.href}
-                          className="
-                            flex min-h-11 items-center gap-3
-                            rounded-lg px-3 py-2.5
-                            text-sm font-semibold
-                            text-muted-foreground
-                            transition-colors
-                            hover:bg-muted
-                            hover:text-foreground
-                          "
-                          onClick={closeMobileMenu}
-                        >
-                          <Icon
-                            size={18}
-                            className="shrink-0 text-primary"
-                          />
+  return (
+    <Link
+      key={category.key}
+      href={category.href}
+      onClick={closeDesktopServices}
+      className="
+        group/category flex items-start gap-3
+        rounded-xl px-3 py-3 transition-colors
+        hover:bg-primary/5
+      "
+    >
+      <span
+        className="
+          mt-0.5 flex size-10 shrink-0
+          items-center justify-center rounded-xl
+          bg-primary/10 text-primary
+          transition-colors
+          group-hover/category:bg-primary
+          group-hover/category:text-primary-foreground
+        "
+      >
+        <Icon size={19} />
+      </span>
 
-                          <span>{category.label}</span>
-                        </Link>
-                      );
-                    })}
+      <span>
+        <span className="block text-sm font-semibold text-foreground">
+          {category.label}
+        </span>
+
+        <span className="mt-1 block text-xs leading-5 text-muted-foreground">
+          {category.description}
+        </span>
+      </span>
+    </Link>
+  );
+})}
                   </div>
 
                   {/* Mobile View all option */}
