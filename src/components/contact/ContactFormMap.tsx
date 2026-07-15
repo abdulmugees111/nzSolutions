@@ -20,7 +20,7 @@ const INFO_CARDS = [
     label: 'Email',
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
-    valueClass: 'text-[11px] leading-normal [overflow-wrap:anywhere]',
+    valueClass: 'text-[12px] leading-normal [overflow-wrap:anywhere]',
     lineHeight: undefined,
   },
   {
@@ -56,7 +56,7 @@ export function ContactFormMap() {
           <div className="flex h-full flex-col gap-3">
 
             {/* Contact info cards */}
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1 lg:items-stretch xl:grid-cols-2 xl:[&>*:last-child]:col-span-2 xl:[&>*:nth-child(3)]:col-span-2">
+            <div className="grid gap-3">
               {INFO_CARDS.map(({icon: Icon, label, value, href, valueClass, lineHeight}) => {
                 const inner = (
                   <div className="flex h-full min-h-[72px] items-center gap-3 rounded-2xl border bg-card px-4 py-3.5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
@@ -65,7 +65,7 @@ export function ContactFormMap() {
                     </span>
                     <div className="min-w-0">
                       <p className="text-[10px] font-bold uppercase tracking-widest text-secondary">{label}</p>
-                      <p className={`mt-0.5 text-foreground ${valueClass}`} style={lineHeight ? {lineHeight} : undefined}>{value}</p>
+                      <p className={`mt-0.5 text-[12px] text-foreground ${valueClass}`} style={lineHeight ? {lineHeight} : undefined}>{value}</p>
                     </div>
                   </div>
                 );
@@ -86,18 +86,16 @@ export function ContactFormMap() {
                 <p className="text-xs font-bold uppercase tracking-widest text-secondary">Find Us</p>
                 <h3 className="mt-1 text-base font-bold text-foreground">Visit our office</h3>
               </div>
-              <div className="mt-1 flex-1">
+              <div className="relative mt-1 flex-1">
                 <iframe
                   title="NZ Solutions LTD location"
-                  width="100%"
-                  height="100%"
+                  className="absolute inset-0 h-full w-full"
                   style={{border: 0, display: 'block'}}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   src={MAP_SRC}
                 />
               </div>
-              <div className="h-5" />
             </div>
           </div>
 
