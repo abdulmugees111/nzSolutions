@@ -55,7 +55,7 @@ export function ContactFormMap() {
           {/* Right — info + map */}
           <div className="flex h-full flex-col gap-3">
 
-            {/* Contact info cards */}
+            {/* Contact cards */}
             <div className="grid gap-3">
               {INFO_CARDS.map(({icon: Icon, label, value, href, valueClass, lineHeight}) => {
                 const inner = (
