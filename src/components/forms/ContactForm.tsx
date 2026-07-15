@@ -3,7 +3,7 @@
 import {useState} from 'react';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {useForm} from 'react-hook-form';
-import {CheckCircle2, Calendar, User, Mail, Phone, Building2, Briefcase, Wallet, MessageSquare} from 'lucide-react';
+import {CheckCircle2, Calendar, User, Mail, Phone, Building2, Briefcase, Wallet, MessageSquare, ChevronDown} from 'lucide-react';
 import {contactFormSchema, type ContactFormValues} from '@/lib/validations';
 import {Button} from '@/components/ui/button';
 import {Input} from '@/components/ui/input';
@@ -114,7 +114,7 @@ export function ContactForm() {
 
           {/* Service Needed */}
           <div>
-            <div className="relative">
+            {/* <div className="relative">
               <Briefcase size={15} className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-muted-foreground" />
               <select
                 id="service"
@@ -126,25 +126,76 @@ export function ContactForm() {
                   <option key={s} value={s}>{s}</option>
                 ))}
               </select>
-            </div>
+            </div> */}
+            <div className="relative">
+  <Briefcase
+    size={15}
+    className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-muted-foreground"
+  />
+
+  <select
+    id="service"
+    className="
+      h-11 w-full appearance-none rounded-lg border bg-background
+      pl-9 pr-9 text-sm text-muted-foreground outline-none
+      focus-visible:ring-2 focus-visible:ring-ring
+    "
+    {...register('service')}
+  >
+    <option value="">Service Needed *</option>
+
+    {SERVICE_OPTIONS.map((service) => (
+      <option key={service} value={service}>
+        {service}
+      </option>
+    ))}
+  </select>
+
+  <ChevronDown
+    size={15}
+    className="
+      pointer-events-none absolute right-2 top-1/2
+      -translate-y-1/2 text-muted-foreground
+    "
+  />
+</div>
             {errors.service && <p className="mt-1 text-xs text-red-600">{errors.service.message}</p>}
           </div>
 
           {/* Project Budget */}
           <div>
-            <div className="relative">
-              <Wallet size={15} className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-muted-foreground" />
-              <select
-                id="budget"
-                className="h-11 w-full rounded-lg border bg-background pl-9 pr-3 text-sm text-muted-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                {...register('budget')}
-              >
-                <option value="">Project Budget</option>
-                {BUDGET_OPTIONS.map((b) => (
-                  <option key={b} value={b}>{b}</option>
-                ))}
-              </select>
-            </div>
+        <div className="relative">
+  <Wallet
+    size={15}
+    className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-muted-foreground"
+  />
+
+  <select
+    id="budget"
+    className="
+      h-11 w-full appearance-none rounded-lg border bg-background
+      pl-9 pr-9 text-sm text-muted-foreground outline-none
+      focus-visible:ring-2 focus-visible:ring-ring
+    "
+    {...register('budget')}
+  >
+    <option value="">Project Budget</option>
+
+    {BUDGET_OPTIONS.map((budget) => (
+      <option key={budget} value={budget}>
+        {budget}
+      </option>
+    ))}
+  </select>
+
+  <ChevronDown
+    size={15}
+    className="
+      pointer-events-none absolute right-2 top-1/2
+      -translate-y-1/2 text-muted-foreground
+    "
+  />
+</div>
           </div>
         </div>
 
