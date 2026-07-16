@@ -4,7 +4,8 @@ import {Link} from '@/i18n/navigation';
 
 export function CTASection() {
   return (
-    <section className="px-4 py-14 sm:px-6 lg:px-8">
+    
+    <section className="px-4 py-14 sm:px-6 lg:px-8 bg-white">
       <div className="mx-auto max-w-7xl overflow-hidden rounded-3xl bg-primary px-6 py-12 text-primary-foreground shadow-sm sm:px-10 lg:px-16">
         <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>

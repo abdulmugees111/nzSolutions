@@ -12,9 +12,8 @@ export const navigation = [
       {label: 'Cloud & DevOps', href: '/services/cloud-devops'}
     ]
   },
-  {labelKey: 'industries', href: '/industries'},
-  {labelKey: 'caseStudies', href: '/case-studies'},
+  // {labelKey: 'industries', href: '/industries'},
+  // {labelKey: 'caseStudies', href: '/case-studies'},
   {labelKey: 'about', href: '/about'},
-  {labelKey: 'careers', href: '/careers'},
   {labelKey: 'contact', href: '/contact'}
 ];

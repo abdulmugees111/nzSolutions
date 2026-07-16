@@ -3,6 +3,7 @@ import {NextIntlClientProvider} from 'next-intl';
 import {hasLocale} from 'next-intl';
 import {notFound} from 'next/navigation';
 import '../globals.css';
+
 import {AppProviders} from '@/components/providers/AppProviders';
 import {Footer} from '@/components/common/Footer';
 import {Header} from '@/components/common/Header';
@@ -16,13 +17,26 @@ export const metadata: Metadata = {
   },
   description:
     'NZ Solutions delivers telecom infrastructure, web development, mobile app development, custom software, and system integration services.',
+  icons: {
+    icon: '/logos/logo.png',
+    shortcut: '/logos/logo.png',
+    apple: '/logos/logo.png'
+  },
   openGraph: {
     title: 'NZ Solutions | Telecom & Digital Engineering',
     description:
       'Telecom infrastructure, web platforms, mobile applications, and custom software solutions.',
     url: 'https://www.nzsolutions.co.uk',
     siteName: 'NZ Solutions',
-    type: 'website'
+    type: 'website',
+    images: [
+      {
+        url: '/logos/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'NZ Solutions'
+      }
+    ]
   }
 };
 
@@ -45,11 +59,13 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body>
+      <body suppressHydrationWarning>
         <NextIntlClientProvider>
           <AppProviders>
             <Header />
+
             <main>{children}</main>
+
             <Footer />
           </AppProviders>
         </NextIntlClientProvider>

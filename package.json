@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "optimize:service-images": "node ./src/scripts/optimize-service-images.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -17,23 +18,24 @@
     "framer-motion": "latest",
     "jotai": "latest",
     "lucide-react": "latest",
-    "next": "latest",
+    "next": "16.2.10",
     "next-intl": "latest",
-    "react": "latest",
-    "react-dom": "latest",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
     "react-hook-form": "latest",
+    "sharp": "0.35.3",
     "tailwind-merge": "latest",
     "zod": "latest"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "eslint": "latest",
-    "eslint-config-next": "latest",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "16.2.10",
     "postcss": "latest",
     "tailwindcss": "latest",
-    "typescript": "latest",
-    "@tailwindcss/postcss": "latest"
+    "typescript": "5.9.2"
   }
 }
