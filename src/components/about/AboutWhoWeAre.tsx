@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import telecomeWorkflow from '@/assets/images/about/telecom-workflow.png.jpeg';
+import telecomeWorkflow from '@/assets/images/about/telecom-workflow.png';
 import {Container} from '@/components/common/Container';
 import {SectionHeader} from '@/components/common/SectionHeader';
 
@@ -44,7 +44,7 @@ export function AboutWhoWeAre() {
           />
         </div>
 
-        <div className="grid gap-10 lg:grid-cols-[1fr_480px] lg:items-start">
+        <div className="grid gap-10 lg:grid-cols-[1fr_500px] lg:items-start">
 
           {/* Left — timeline */}
           <div className="relative order-2 lg:order-1">
@@ -77,15 +77,19 @@ export function AboutWhoWeAre() {
             </div>
           </div>
 
-          {/* Right — illustration */}
-          <div className="order-1 lg:order-2 lg:-mt-4 overflow-hidden rounded-3xl border shadow-md bg-white">
-            <div className="relative aspect-[16/9] w-full">
+          {/* Right — illustration aligned to heading+timeline height */}
+          <div className="order-1 lg:order-2 group relative self-stretch -mt-48 p-3 sm:p-4">
+            {/* Top-left decorative corner */}
+            <div aria-hidden="true" className="absolute left-0 top-0 h-28 w-28 rounded-[1.75rem] bg-cyan-500 transition-transform duration-500 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1" />
+            {/* Bottom-right decorative corner */}
+            <div aria-hidden="true" className="absolute bottom-0 right-0 h-28 w-28 rounded-[1.75rem] bg-primary transition-transform duration-500 ease-out group-hover:translate-x-1 group-hover:translate-y-1" />
+            <div className="relative z-10 overflow-hidden rounded-3xl border border-border shadow-sm bg-white h-full transition-all duration-500 ease-out group-hover:-translate-y-1 group-hover:border-primary/40 group-hover:shadow-xl">
               <Image
                 src={telecomeWorkflow}
                 alt="End-to-end telecom workflow illustration"
                 fill
-                className="object-contain p-3"
-                sizes="(max-width: 1024px) 100vw, 480px"
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 520px"
               />
             </div>
           </div>
