@@ -3,7 +3,7 @@ import {Container} from '@/components/common/Container';
 
 export function AboutCovidPolicy() {
   return (
-    <section className="border-t border-b bg-muted/30 pt-8 pb-8 sm:pt-10 sm:pb-10 lg:pt-12 lg:pb-12">
+    <section className="border-t border-b bg-[#F8FAFC] pt-8 pb-8 sm:pt-10 sm:pb-10 lg:pt-12 lg:pb-12">
       <Container>
         <div className="relative overflow-hidden rounded-3xl border bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md sm:p-7">
           <div className="relative z-10 flex items-start gap-5">

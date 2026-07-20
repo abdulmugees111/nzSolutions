@@ -11,7 +11,7 @@ const perks = [
 
 export function AboutCareersCta() {
   return (
-    <section className="pt-8 pb-14 sm:pt-10 sm:pb-20 lg:pt-12 lg:pb-24">
+    <section className="pt-8 pb-14 sm:pt-10 sm:pb-20 lg:pt-12 lg:pb-24 bg-white">
       <Container>
         <div className="rounded-3xl bg-primary p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-8">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
