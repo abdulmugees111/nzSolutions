@@ -31,8 +31,8 @@ const PERKS = ['Free Consultation', 'Quick Response', 'No Obligation'];
 
 const NEXT_STEPS = [
   { icon: Inbox,  label: 'Received',  desc: 'Goes straight to our team', color: 'bg-blue-50 text-blue-600' },
-  { icon: Clock,  label: 'Reviewed',  desc: 'Within 2–4 business hours',  color: 'bg-amber-50 text-amber-600' },
-  { icon: Zap,    label: 'We respond', desc: 'Same business day',          color: 'bg-green-50 text-green-600' },
+  { icon: Clock,  label: 'Reviewed',  desc: 'Within 1 business day',      color: 'bg-amber-50 text-amber-600' },
+  { icon: Zap,    label: 'We respond', desc: 'Within 2–3 business days',   color: 'bg-green-50 text-green-600' },
 ];
 
 export function ContactForm() {
@@ -219,7 +219,7 @@ export function ContactForm() {
 
       {/* ── What Happens Next ──────────────────────────────────── */}
       <div className="border-t px-6 py-5 sm:px-8">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">What happens next?</p>
+        <p className="mb-3 text-sm font-semibold text-foreground">What happens next?</p>
         <div className="grid grid-cols-3 gap-2.5">
           {NEXT_STEPS.map(({ icon: Icon, label, desc, color }) => (
             <div
@@ -230,8 +230,8 @@ export function ContactForm() {
                 <Icon size={16} />
               </div>
               <div>
-                <p className="text-xs font-semibold text-foreground">{label}</p>
-                <p className="mt-0.5 text-[11px] leading-4 text-muted-foreground">{desc}</p>
+                <p className="text-sm font-semibold text-foreground">{label}</p>
+                <p className="mt-0.5 text-xs leading-4 text-muted-foreground">{desc}</p>
               </div>
             </div>
           ))}
