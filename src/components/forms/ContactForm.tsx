@@ -30,9 +30,9 @@ const BUDGET_OPTIONS = [
 const PERKS = ['Free Consultation', 'Quick Response', 'No Obligation'];
 
 const NEXT_STEPS = [
-  { icon: Inbox,  label: 'Received',  desc: 'Goes straight to our team', color: 'bg-blue-50 text-blue-600' },
-  { icon: Clock,  label: 'Reviewed',  desc: 'Within 1 business day',      color: 'bg-amber-50 text-amber-600' },
-  { icon: Zap,    label: 'We respond', desc: 'Within 2–3 business days',   color: 'bg-green-50 text-green-600' },
+  { icon: Inbox, label: 'Received',   desc: 'Goes straight to our team' },
+  { icon: Clock, label: 'Reviewed',   desc: 'Within 1 business day'      },
+  { icon: Zap,   label: 'We respond', desc: 'Within 2–3 business days'   },
 ];
 
 export function ContactForm() {
@@ -221,14 +221,14 @@ export function ContactForm() {
       <div className="border-t px-6 py-5 sm:px-8">
         <p className="mb-3 text-sm font-semibold text-foreground">What happens next?</p>
         <div className="grid grid-cols-3 gap-2.5">
-          {NEXT_STEPS.map(({ icon: Icon, label, desc, color }) => (
+          {NEXT_STEPS.map(({ icon: Icon, label, desc }) => (
             <div
               key={label}
-              className="group flex flex-col items-center gap-2.5 rounded-xl border border-border bg-background p-3 text-center transition-all duration-200 cursor-default hover:-translate-y-0.5 hover:shadow-md hover:border-primary/20"
+              className="group flex flex-col items-center gap-3 rounded-2xl border bg-card p-4 text-center transition-all duration-300 cursor-default hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className={`flex h-9 w-9 items-center justify-center rounded-full transition-transform duration-200 group-hover:scale-110 ${color}`}>
-                <Icon size={16} />
-              </div>
+              <span className="flex size-12 items-center justify-center rounded-xl bg-secondary/10 text-secondary transition-all duration-300 group-hover:bg-secondary group-hover:text-white">
+                <Icon size={24} strokeWidth={1.75} />
+              </span>
               <div>
                 <p className="text-sm font-semibold text-foreground">{label}</p>
                 <p className="mt-0.5 text-xs leading-4 text-muted-foreground">{desc}</p>

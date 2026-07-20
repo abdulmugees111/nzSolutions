@@ -12,7 +12,7 @@ const INFO_CARDS = [
     label: 'Phone',
     value: siteConfig.phone,
     href: `tel:${siteConfig.phone.replace(/\s/g, '')}`,
-    valueClass: 'text-[12px] leading-normal',
+    valueClass: 'text-sm leading-normal',
     lineHeight: undefined,
   },
   {
@@ -20,7 +20,7 @@ const INFO_CARDS = [
     label: 'Email',
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
-    valueClass: 'text-[12px] leading-normal [overflow-wrap:anywhere]',
+    valueClass: 'text-sm leading-normal [overflow-wrap:anywhere]',
     lineHeight: undefined,
   },
   {
@@ -28,7 +28,7 @@ const INFO_CARDS = [
     label: 'Office',
     value: `${siteConfig.address.line1}, ${siteConfig.address.line2}, ${siteConfig.address.city}, ${siteConfig.address.postcode}`,
     href: `https://maps.google.com/maps?q=NZ+Solutions+LTD,+Suite+314,+Stanmore+Business+Centre,+Howard+Road,+Stanmore,+HA7+1BT`,
-    valueClass: 'text-[12px]',
+    valueClass: 'text-sm',
     lineHeight: '1.5',
   },
   {
@@ -36,7 +36,7 @@ const INFO_CARDS = [
     label: 'Business Hours',
     value: 'Mon – Fri: 9:00 AM – 6:00 PM',
     href: null,
-    valueClass: 'text-[12px] leading-normal',
+    valueClass: 'text-sm leading-normal',
     lineHeight: undefined,
   },
 ];
@@ -60,11 +60,11 @@ export function ContactFormMap() {
               {INFO_CARDS.map(({icon: Icon, label, value, href, valueClass, lineHeight}) => {
                 const inner = (
                   <div className="flex h-full min-h-[72px] items-center gap-3 rounded-2xl border bg-card px-4 py-3.5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
-                    <span className="flex h-9 w-9 shrink-0 self-center items-center justify-center rounded-xl bg-primary/10 text-primary">
+                    <span className="flex h-9 w-9 shrink-0 self-center items-center justify-center rounded-xl bg-secondary/10 text-secondary">
                       <Icon size={18} />
                     </span>
                     <div className="min-w-0">
-                      <p className="text-[10px] font-bold uppercase tracking-widest text-secondary">{label}</p>
+                      <p className="text-xs font-extrabold uppercase tracking-widest text-foreground">{label}</p>
                       <p className={`mt-0.5 text-[12px] text-foreground ${valueClass}`} style={lineHeight ? {lineHeight} : undefined}>{value}</p>
                     </div>
                   </div>
